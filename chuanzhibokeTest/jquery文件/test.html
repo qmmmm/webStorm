@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <script>
+//        扩展一个全局的jquery对象方法
+        $.log=function () {
+            console.log(new Date());
+        }
+        $.log();
+
+//        扩展一个普通的jquery对象的方法
+        $.fn.log=function () {
+            console.log($(this).text());
+        }
+        $(function () {
+            $("div").log();
+        })
+    </script>
+</head>
+<body>
+<div>
+    div里面的文本
+</div>
+</body>
+</html>

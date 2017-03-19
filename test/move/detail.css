@@ -1,0 +1,16 @@
+#pagebody_top{width:750px;border:solid 1px orange;clear: both;}
+#pagebody_top_left{width:310px;min-height:300px;float:left;border:solid 1px orange;}
+#pagebody_top_right{width:430px;min-height:300px;float:left;border:solid 1px orange;}
+
+#bigimglist{width:310px;height: 310px;}
+#bigimglist img{width:310px;height: 310px;}
+#smallimglist div{
+    width: 60px;height:60px;float:left;border:solid 1px #666666;text-align: center;
+    margin: 3px;}
+#smallimglist div img{width:50px;  height: 50px;}
+#targetimgdiv{position: relative;border: solid 1px red;
+    width: 400px;height:400px;overflow: hidden;z-index: 1000}
+#targetimg{
+    width:600px;
+    height: 600px;
+}

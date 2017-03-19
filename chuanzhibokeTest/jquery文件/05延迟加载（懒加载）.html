@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            height:2000px;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script src="jquery.lazyload.min.js"></script>
+
+    <script>
+        $(function () {
+            $(".lazyload").lazyload();
+
+        })
+    </script>
+</head>
+<body>
+<div></div>
+<img data-original="images/1.jpg" alt="" width="1600" height="1000" class="lazyload">
+<img data-original="images/ts.gif" alt="" width="176" height="144" class="lazyload">
+</body>
+</html>

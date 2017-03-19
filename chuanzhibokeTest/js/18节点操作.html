@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="demo">
+    <div class="xiongda"></div>
+</div>
+<script>
+//    appendChild();添加孩子，放到盒子的最后面
+//insertBefore(插入的节点，参照节点)；要写满两个参数,
+// 如果第二个参数为null，则默认这新生成的盒子放到最后面
+    var demo=document.getElementById("demo");
+    var  childrens=demo.children;
+    var firstDiv=document.createElement("div");
+    demo.appendChild(firstDiv);
+    var test=document.createElement("div");
+    demo.insertBefore(test,childrens[0]);
+    demo.removeChild(test);
+//    移除孩子节点
+//    cloneNode();复制节点，里面可以跟参数，如果里面是true 深层复制，除了复制本盒子，还复制子节点
+//    如果为false 浅层复制 只复制 本节点 不复制自节点
+//    demo.appendChild(childrens[0].cloneNode());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin:10px;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            function getClass(classname, id) {
+                if(document.getElementsByClassName){
+                    if(id){
+                        var ids=document.getElementById(id);
+                        return ids.getElementsByClassName(classname);
+                    }else {
+                        return document.getElementsByClassName(classname);
+                    }
+                }
+                var arr=[];
+                if(id){
+                    var id2=document.getElementById(id);
+                    var doms=id2.getElementsByTagName("*");
+                }else {
+                    doms=document.getElementsByTagName("*");
+                }
+                for(var j=0;j<doms.length;j++){
+                    var txtarr=doms[j].className.split(" ");
+                    for(var k=0;k<txtarr.length;k++){
+                        if(txtarr[k]==classname){
+                            arr.push(doms[j]);
+                        }
+                    }
+                }
+                return arr;
+            }
+            var test=getClass("test","one");
+            for(var i=0;i<test.length;i++){
+                test[i].style.backgroundColor="purple";
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div class="demo"></div>
+<div></div>
+<div></div>
+<div class="test demo"></div>
+<div></div>
+<div id="one">
+    <div class="demo one"></div>
+    <div></div>
+    <div class="test"></div>
+    <div class="demo test"></div>
+    <div></div>
+</div>
+
+</body>
+</html>

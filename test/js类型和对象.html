@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>haha</title>
+</head>
+<body>
+<script>
+    console.log(typeof NaN);
+    console.log(typeof []);
+    console.log(typeof {});
+    console.log(this);
+    document.write('<pre>')
+    document.writeln('hello world');
+    document.write('ni');
+    document.write('</pre>');
+    console.log(typeof Infinity);
+    console.log(typeof null);
+    function aaa() {
+
+    }
+    console.log(typeof aaa);
+
+    var stooge={
+        "first-name":"jer",
+        "last-name":"how"
+    };
+    var x=stooge;
+    x.nickname='curly';
+    var nick=stooge.nickname;
+    console.log(nick);//nick为curly
+    var a={},b={},c={};
+    //a、b和c每个都引用一个不同的空对象
+    a=b=c={};
+    //a、b和c都引用同一个空对象
+
+</script>
+</body>
+</html>

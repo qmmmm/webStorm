@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            font-size: 12px;
+        }
+    </style>
+    <script src="../jquery.min.js"></script>
+    <script>
+//        write less,do more
+        $(document).ready(function () {
+            $("li").css("font-size",function (index, value) {
+                return (index+1)*parseInt(value)+"px";
+            })
+        })
+    </script>
+</head>
+<body>
+<ul>
+    <li>内容</li>
+    <li>内容</li>
+    <li>内容</li>
+    <li>内容</li>
+</ul>
+</body>
+</html>

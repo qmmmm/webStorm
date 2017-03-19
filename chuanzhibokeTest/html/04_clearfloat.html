@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin:0;
+            padding:0;
+        }
+        div{
+            width:400px;
+            height:300px;
+            border:1px solid #000;
+            margin:100px;
+            padding:50px;
+        }
+        .news ul{
+            list-style:none;
+        }
+        .news ul li{
+            /*height:30px;*/
+            overflow: hidden;
+            /*清楚了浮动*/
+            border-bottom: 1px dashed gray;
+        }
+        .news ul li span.title{
+            float: left;
+        }
+        .news ul li span.date{
+            /*clear: both;*/
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+<div class="news">
+    <ul>
+        <li><span class="title">hahahahahaha</span><span class="date">2015nian9yue20ri</span></li>
+        <li><span class="title">hahahahahaha</span><span class="date">2015nian9yue20ri</span></li>
+        <li><span class="title">hahahahahaha</span><span class="date">2015nian9yue20ri</span></li>
+        <li><span class="title">hahahahahaha</span><span class="date">2015nian9yue20ri</span></li>
+        <li><span class="title">hahahahahaha</span><span class="date">2015nian9yue20ri</span></li>
+    </ul>
+</div>
+</body>
+</html>

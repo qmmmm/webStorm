@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+<!--leader=leader+(target-leader)/10-->
+<button id="btn">dianji</button>
+<div id="box"></div>
+<script>
+    var btn=document.getElementById("btn");
+    var box=document.getElementById("box");
+    var leader=0;
+    var target=500;
+    var timer=null;
+//    btn.onclick=function () {
+//        clearInterval(timer);
+//        timer=setInterval(function () {
+//            leader=leader+(target-leader)/10;
+//            box.style.marginLeft=leader+"px";
+//        },50)
+//    }
+    btn.onclick=function () {
+        clearTimeout(timer);
+        timer=setTimeout(function () {
+            leader=leader+(target-leader)/10;
+            box.style.marginLeft=leader+"px";
+        },50)
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var txt=document.getElementById("txt");
+            var btn=document.getElementById("btn");
+            btn.onclick=function () {
+                var val=txt.value;
+                switch (val){
+                    case "苹果":
+                        alert("苹果的价格");
+                        break;
+                    default:
+                        alert("没有");
+
+
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="txt">
+<button id="btn">查询价格</button>
+</body>
+</html>

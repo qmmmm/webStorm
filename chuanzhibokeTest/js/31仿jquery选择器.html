@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin:5px;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<div></div>
+<div id="one"></div>
+<div></div>
+<div class="two"></div>
+<div class="two"></div>
+<div class="two"></div>
+<div></div>
+<div></div>
+<script>
+    function getClass(classname) {
+        if(document.getElementsByClassName){
+            return document.getElementsByClassName(classname);
+        }
+        var arr=[];
+        var taglist=document.getElementsByTagName("*");
+
+        for(var i=0;i<taglist.length;i++){
+            var txtarr=taglist[i].className.split(" ");
+            for(var j=0;j<txtarr.length;j++){
+                if(txtarr[j]==classname){
+                    arr.push(taglist[i]);
+                }
+            }
+        }
+        return arr;
+    }
+    function $(str) {
+        var s=str.charAt("0");
+        var ss=str.substring(1);
+        switch (s){
+            case "#": return document.getElementById(ss);break;
+            case ".": return getClass(ss);break;
+            default: return document.getElementsByTagName(str);
+        }
+    }
+    $("#one").style.backgroundColor="purple";
+    var test=$(".two");
+    for (var i=0;i<test.length;i++){
+        test[i].style.backgroundColor="blue";
+    }
+</script>
+</body>
+</html>

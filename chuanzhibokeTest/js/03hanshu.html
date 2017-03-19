@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function fn(a, b) {
+//        得到函数形参的个数
+        console.log(fn.length);
+//        得到实参的个数。
+        console.log(arguments.length);
+        if(fn.length==arguments.length){
+            console.log(a+b);
+        }else {
+            console.error("对不起，参数不匹配,正确的参数个数是"+fn.length);
+        }
+    }
+    fn(1,2);
+//    arguments是存实参的
+//    fn(1);//只有一个参数的时候输出的是undefine
+//    fn(1,2,3);参数多的话，后面的会被忽略
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Parent(firstname)
+    {
+        this.fname=firstname;
+        this.age=40;
+        this.sayAge=function()
+        {
+            console.log(this.age);
+        }
+    }
+    function Child(firstname)
+    {
+        this.parent=Parent;
+        this.parent(firstname);
+        delete this.parent;
+        this.saySomeThing=function()
+        {
+            console.log(this.fname);
+            this.sayAge();
+        }
+    }
+    var mychild=new Child("李");
+    mychild.saySomeThing();
+</script>
+</body>
+</html>

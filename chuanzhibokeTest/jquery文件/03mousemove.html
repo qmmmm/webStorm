@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            $(document).on("mousemove",function (e) {
+                $("img").css({
+                    "position":"absolute",
+                    "top":e.pageY,
+                    "left":e.pageX
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<img src="images/ts.gif" alt="">
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .backtop{
+            position: fixed;
+            bottom:100px;
+            right:30px;
+            width:60px;
+            height:60px;
+            background-color: gray;
+            text-align: center;
+            line-height: 30px;
+            text-decoration: none;
+            color: white;
+
+        }
+    </style>
+</head>
+<body>
+<a class="backtop">返回<br />顶部</a>
+<img src="images/2.jpg" alt="" />
+<img src="images/2.jpg" alt="" />
+<img src="images/2.jpg" alt="" />
+<img src="images/2.jpg" alt="" />
+<script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+<script type="text/javascript">
+    $(".backtop").click(function () {
+        $("html,body").animate({
+            "scrollTop":0
+        },1000);
+    });
+
+</script>
+</body>
+</html>

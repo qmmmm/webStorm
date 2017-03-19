@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../lib/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-hidden="true">
+            地铁线路
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <!--标题：来表明一组动作-->
+            <li role="presentation" class="dropdown-header">地铁</li>
+            <li role="presentation"><a href="#" role="menuitem" tabindex="-1">一号线</a></li>
+            <!--禁用菜单项：disable他就不可选了-->
+            <li role="presentation" class="disabled"><a href="#" role="menuitem" tabindex="-1">二号线</a></li>
+            <li role="presentation"><a href="#" role="menuitem" tabindex="-1">三号线</a></li>
+            <!--分割线：用于将多个连接分组-->
+
+            <li role="presentation" class="divider"></li>
+            <li role="presentation"><a href="#" role="menuitem" tabindex="-1">四号线</a></li>
+        </ul>
+    </div>
+</div>
+<script src="../lib/jquery.min.js"></script>
+<script src="../lib/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ul">
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+    var ul=document.getElementById("ul");
+    var childrens=ul.childNodes;
+    for(var i=0;i<childrens.length;i++){
+//        如果不用nodeType＝＝1来判断的话，
+// 高级浏览器会将列表之间的空格和换行也认为是ul的childNode，
+// 这样就会有错误啦
+        if(childrens[i].nodeType==1){
+            childrens[i].style.backgroundColor="purple";
+        }
+    }
+</script>
+</body>
+</html>

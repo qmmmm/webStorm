@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ul">
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script>
+//    children选取所有的孩子（只有元素节点）。这个更好。但是可能在IE678中会包含注释节点。
+    var ul=document.getElementById("ul");
+    var childrens=ul.children;
+    alert(childrens.length);
+
+</script>
+</body>
+</html>

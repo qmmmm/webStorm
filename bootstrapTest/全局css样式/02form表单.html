@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form表单</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
+</head>
+<body>
+<div class="container">
+    <form action="">
+        <div class="form-group">
+            <label for="em">用户名</label>
+            <input type="email" class="form-control" placeholder="默认提示文字" id="em">
+        </div>
+        <div class="form-group">
+            <label for="">密码</label>
+            <input type="password" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="file">file input</label>
+            <input type="file" id="file">
+            <p>请选择您要的文件</p>
+        </div>
+        <div class="checkbox">
+            <label for="">
+                <input type="checkbox">boy
+            </label>
+        </div>
+        <button type="submit" class="btn btn-default">
+            提交
+        </button>
+    </form>
+    <hr>
+    <!--内连表单-->
+    <form action="" class="form-inline">
+        <div class="form-group">
+            <label for="" class="sr-only">username:sr-only类可以让username隐藏起来</label>
+            <input type="email" class="form-control" placeholder="username">
+        </div>
+        <div class="form-group">
+            <label for="">password</label>
+            <input type="password" class="form-control" placeholder="password">
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <!--input-group-addon属性让下面两个标签连在一起，有一个比较好的显示效果-->
+                <div class="input-group-addon">$</div>
+                <input type="email" class="form-control" placeholder="金额">
+                <div class="input-group-addon">.00</div>
+            </div>
+
+        </div>
+    </form>
+    <hr>
+    <!--水平排列的表单-->
+    <form action="" class="form-horizontal">
+        <div class="form-group">
+            <!--利用栅格系统，左右分所占的宽度-->
+            <label for="" class="col-sm-2 control-label">email</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control">
+            </div>
+        </div>
+        <textarea name="" id="" cols="30" rows="3" class="form-control"></textarea>
+        <div class="form-group">
+            <label for="" class="col-sm-2 control-label">email</label>
+            <div class="col-sm-10">
+                <p class="form-control-static">dfdsjfhg@qq.com:form-control-static这个类能让这个内容跟上面的label内容在同一行显示（静态控件）</p>
+            </div>
+        </div>
+        <fieldset disabled>
+            <!--让下面的都是禁用状态 ，fieldset当中a标签是不会被禁用的-->
+            <div class="form-group">
+                <label for="" class="sr-only"></label>
+                <input class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="" class="sr-only"></label>
+                <input class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="" class="sr-only"></label>
+                <input class="form-control">
+            </div>
+            <a href="#">hello</a>
+            <button type="reset" class="btn btn-primary">重置</button>
+        </fieldset>
+        <div class="form-group">
+            <label for="" class="sr-only">hello</label>
+            <input type="text" class="form-control" readonly placeholder="这是一个只读输入框">
+        </div>
+        <div class="form-group has-success has-feedback">
+            <label for="" class="control-label">hello</label>
+            <input type="text" class="form-control" placeholder="校验状态has－success说明通过，表单颜色是绿色的" aria-describedby="inputsuccessstatus">
+            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+        </div>
+        <input type="text" class="form-control input-lg" placeholder="da">
+        <input type="text" class="form-control" placeholder="默认">
+        <input type="text" class="form-control input-sm" placeholder="small">
+        <!--辅助文本-->
+        <label for="" class="sr-only">hello</label>
+        <input type="text" class="form-control" aria-describedby="helpBlock">
+        <span id="helpBlock" class="help-block">这个一个输入密码的狂，密码至少为6为。就是这样的辅助文本</span>
+    </form>
+    <hr>
+    <!--下拉列表-->
+    <form action="">
+        <select name="" id="" class="form-control">
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">4</option>
+            <option value="">5</option>
+        </select>
+        <select class="form-control" multiple>
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">4</option>
+            <option value="">5</option>
+        </select>
+    </form>
+    <hr>
+    <form action="" class="form-horizontal">
+
+    </form>
+</div>
+</body>
+</html>

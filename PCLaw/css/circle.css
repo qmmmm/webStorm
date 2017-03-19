@@ -1,0 +1,239 @@
+.lawSide-main .content-middle .service{
+    /*position: relative;*/
+    /*height: 300px;*/
+}
+.lawSide-main .content-middle .service .line{
+    position: relative;
+}
+/* 半圆线条公共 */
+.lawSide-main .content-middle .service .line .line01,
+.lawSide-main .content-middle .service .line .line02,
+.lawSide-main .content-middle .service .line .line03,
+.lawSide-main .content-middle .service .line .line04{
+    position: absolute;
+    left:50%;
+    border-left: 1px solid #ebebeb;
+    border-right: 1px solid #ebebeb;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+    bottom:-160px;
+}
+
+
+.lawSide-main .content-middle .service .line .line01{
+    height:273px;
+    width:546px;
+    border-radius: 273px 273px 0 0;
+    margin-left: -273px;
+    z-index: -2;
+}
+/* 小圆上面字体公共 */
+.lawSide-main .content-middle .service .line .line01 h6,
+.lawSide-main .content-middle .service .line .line02 h6,
+.lawSide-main .content-middle .service .line .line03 h6,
+.lawSide-main .content-middle .service .line .line04 h6{
+    color: #999;
+    position: absolute;
+}
+/* 拍照 */
+.lawSide-main .content-middle .service .line .line01 .photograph h6{
+    font-size: 16px;
+    top: -34%;
+    left: 27%;
+}
+/* 日程 */
+.lawSide-main .content-middle .service .line .line01 .schedule h6{
+    font-size: 16px;
+    top: -32%;
+    left: 30%;
+}
+/* 计算器 */
+.lawSide-main .content-middle .service .line .line02 .calculator h6{
+    font-size: 16px;
+    top: -40%;
+    left: 13%;
+}
+/* 语音 */
+.lawSide-main .content-middle .service .line .line02 .voice h6{
+    font-size: 16px;
+    top: -40%;
+    left: 22%;
+}
+/* 附近律师 */
+.lawSide-main .content-middle .service .line .line03 .lawyer h6{
+    font-size: 14px;
+    top: -52%;
+    left: -12%;
+}
+/* 视频讲座 */
+.lawSide-main .content-middle .service .line .line04 .video h6{
+    font-size: 12px;
+    top: -44%;
+    left: 4%;
+}
+/* 筛选案例 */
+.lawSide-main .content-middle .service .line .line04 .filter-case h6{
+    font-size: 12px;
+    top: -50%;
+    left: 2%;
+}
+/* 法律词典 */
+.lawSide-main .content-middle .service .line .line04 .dictionary h6{
+    font-size: 12px;
+    top: -56%;
+    left: -12%;
+}
+/* 活动推荐 */
+.lawSide-main .content-middle .service .line .line04 .recommend h6{
+    font-size: 12px;
+    top: -60%;
+    left: -16%;
+}
+/* 小圆公共 */
+.lawSide-main .content-middle .service .line .line01 .photograph,
+.lawSide-main .content-middle .service .line .line01 .schedule,
+.lawSide-main .content-middle .service .line .line02 .calculator,
+.lawSide-main .content-middle .service .line .line02 .voice,
+.lawSide-main .content-middle .service .line .line03 .lawyer,
+.lawSide-main .content-middle .service .line .line04 .video,
+.lawSide-main .content-middle .service .line .line04 .filter-case,
+.lawSide-main .content-middle .service .line .line04 .dictionary,
+.lawSide-main .content-middle .service .line .line04 .recommend{
+    border-radius: 50%;
+    text-align: center;
+    position: absolute;
+}
+.lawSide-main .content-middle .service .line .line01 .photograph{
+    width:80px;
+    height: 80px;
+    background-color: #e8d7a5;
+    top:46%;
+    left: -4%;
+}
+
+.lawSide-main .content-middle .service .line .line01 .photograph .font-paizhao{
+    color: #fff;
+    font-size: 48px;
+    line-height: 76px;
+}
+.lawSide-main .content-middle .service .line .line01 .schedule{
+    width: 92px;
+    height: 92px;
+    background-color: #8fc5e9;
+    top: -12%;
+    left: 41%;
+}
+.lawSide-main .content-middle .service .line .line01 .schedule .font-iconrc{
+    color: #fff;
+    font-size: 54px;
+    line-height: 94px;
+}
+
+.lawSide-main .content-middle .service .line .line02{
+    height:345px;
+    width:690px;
+    border-radius: 345px 345px 0 0;
+    margin-left: -345px;
+    z-index: -22;
+}
+.lawSide-main .content-middle .service .line .line02 .calculator{
+    width:66px;
+    height: 66px;
+    background-color: #9ce3e3;
+    top: 4%;
+    left: 18%;
+}
+.lawSide-main .content-middle .service .line .line02 .calculator .font-jisuanqi{
+    color: #fff;
+    font-size: 32px;
+    line-height: 68px;
+}
+.lawSide-main .content-middle .service .line .line02 .voice{
+    width:80px;
+    height: 80px;
+    background-color: #f1bda4;
+    top: 54%;
+    left: 92%;
+}
+.lawSide-main .content-middle .service .line .line02 .font-mic{
+    color: #fff;
+    font-size: 44px;
+    line-height: 78px;
+}
+.lawSide-main .content-middle .service .line .line03{
+    height:425px;
+    width:850px;
+    border-radius: 425px 425px 0 0;
+    margin-left: -425px;
+    z-index: -222;
+}
+
+.lawSide-main .content-middle .service .line .line03 .lawyer{
+    width:50px;
+    height: 50px;
+    background-color: #b49fda;
+    top: 9%;
+    left: 78%;
+}
+.lawSide-main .content-middle .service .line .line03 .lawyer .font-lvshi{
+    color: #fff;
+    font-size: 30px;
+    line-height: 50px;
+}
+.lawSide-main .content-middle .service .line .line04{
+    height:490px;
+    width:980px;
+    border-radius: 490px 490px 0 0;
+    margin-left: -490px;
+    z-index: -2222;
+}
+.lawSide-main .content-middle .service .line .line04 .video{
+    width:60px;
+    height: 60px;
+    background-color: #f3b3d4;
+    top: 52%;
+    left: 1%;
+}
+.lawSide-main .content-middle .service .line .line04 .video .font-video{
+    color: #fff;
+    font-size: 32px;
+    line-height: 60px;
+}
+.lawSide-main .content-middle .service .line .line04 .filter-case{
+    width:56px;
+    height: 56px;
+    background-color: #aae4c4;
+    top: 6%;
+    left: 22%;
+}
+.lawSide-main .content-middle .service .line .line04 .filter-case .font-filter{
+    color: #fff;
+    font-size: 38px;
+    line-height: 60px;
+}
+.lawSide-main .content-middle .service .line .line04 .dictionary{
+    width:44px;
+    height: 44px;
+    background-color: #d2eea9;
+    top: 8%;
+    left: 72%;
+}
+.lawSide-main .content-middle .service .line .line04 .dictionary .font-dictionary{
+    color: #fff;
+    font-size: 24px;
+    line-height: 44px;
+}
+.lawSide-main .content-middle .service .line .line04 .recommend{
+    width:42px;
+    height: 42px;
+    background-color: #9ce3e3;
+    top: 66%;
+    left: 96%;
+}
+.lawSide-main .content-middle .service .line .line04 .recommend .font-recommend{
+    color: #fff;
+    font-size: 22px;
+    line-height: 42px;
+}
+

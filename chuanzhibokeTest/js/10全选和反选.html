@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload=function () {
+            var buttons=document.getElementsByTagName("button");
+            var inputs=document.getElementById("bottom").getElementsByTagName("input");
+//            buttons[0].onclick=function () {
+//                for(var i=0;i<inputs.length;i++){
+//                    inputs[i].checked=true;
+//                }
+//            }
+//            buttons[1].onclick=function () {
+//                for(var i=0;i<inputs.length;i++){
+//                    inputs[i].checked=false;
+//                }
+//            }
+            buttons[2].onclick=function () {
+                for(var i=0;i<inputs.length;i++){
+                    if(inputs[i].checked==true){
+                        inputs[i].checked=false;
+                    }else {
+                        inputs[i].checked=true;
+                    }
+                }
+            }
+            function dian(flag) {
+                    for(var i=0;i<inputs.length;i++){
+                        inputs[i].checked=flag;
+                    }
+            }
+            buttons[0].onclick=function () {
+                dian(true);
+            }
+            buttons[1].onclick=function () {
+                dian(false);
+            }
+
+
+            }
+
+    </script>
+</head>
+<body>
+<div id="top">
+    <button>全选</button>
+    <button>取消</button>
+    <button>反选</button>
+</div>
+<div id="bottom">
+    <ul>
+        <li>选项: <input type="checkbox"/></li>
+        <li>选项: <input type="checkbox"/></li>
+        <li>选项: <input type="checkbox"/></li>
+        <li>选项: <input type="checkbox"/></li>
+        <li>选项: <input type="checkbox"/></li>
+        <li>选项: <input type="checkbox"/></li>
+        <li>选项: <input type="checkbox"/></li>
+        <li>选项: <input type="checkbox"/></li>
+        <li>选项: <input type="checkbox"/></li>
+        <li>选项: <input type="checkbox"/></li>
+        <li>选项: <input type="checkbox"/></li>
+        <li>选项: <input type="checkbox"/></li>
+    </ul>
+</div>
+</body>
+</html>

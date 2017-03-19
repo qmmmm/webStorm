@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <!--可用作按钮的标签-->
+    <!--:为a增加role＝button增强他的访问性-->
+    <a href="#" class="btn btn-default" role="button">link</a>
+    <!--尽可能使用butotn，在导航和导航条组件中只支持button元素-->
+    <button class="btn btn-default" type="submit">默认btn</button>
+    <input type="button" class="btn btn-default" value="按钮">
+    <hr>
+    <button class="btn btn-primary" type="button">首选btn</button>
+    <button class="btn btn-success" type="button">成功btn</button>
+    <button class="btn btn-info" type="button">信息btn</button>
+    <button class="btn btn-warning" type="button">警告btn</button>
+    <button class="btn btn-danger" type="button">危险btn</button>
+    <hr>
+    <!--disabled表示禁用状态-->
+    <button type="button" class="btn btn-default btn-lg disabled">max</button>
+    <button type="button" class="btn btn-default disabled">default</button>
+    <button type="button" class="btn btn-default btn-sm disabled">small</button>
+    <button type="button" class="btn btn-default btn-xs">手机按钮</button>
+    <hr>
+    <button type="button" class="btn bg-primary btn-lg btn-block">块级按钮</button>
+    <!--激活状态,明显比未激活状态的颜色要深一点，例如上面未激活状态的btn-success-->
+    <button type="button" class="btn btn-success btn-sm active">button</button>
+    <a href="#" class="btn bg-info btn-sm disabled" role="button">btn按钮</a>
+</div>
+</body>
+</html>

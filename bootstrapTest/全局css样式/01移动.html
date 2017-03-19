@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--支持移动设备,移动设备优先-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>全局css样式</title>
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <style>
+        .row{
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        [class*="col-"]{
+            padding-top: 15px;
+            padding-bottom: 15px;
+            background-color: #eeeeee;
+            background-color: rgba(86, 61, 124, .15);
+            border:1px solid #DDDDDD;
+            border:1px solid rgba(86,61,124,.2);
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <!--在手机小屏幕上是站6:6，在md正常电脑屏幕上是4:8；-->
+        <!--<div class="col-xs-6 col-md-4">.col-md-4</div>-->
+        <!--不要上面那一行可以给下面的设置列偏移量，让下面的在原来的位置.偏移几个格后面的数字就是几-->
+        <!--<div class="col-xs-6 col-md-8 col-md-offset-4">.col-md-8</div>-->
+
+        <!--&lt;!&ndash;嵌套&ndash;&gt;-->
+        <!--<div class="col-md-9">-->
+            <!--col-md-9-->
+            <!--<div class="row">-->
+                <!--&lt;!&ndash;在里面也可以偏移&ndash;&gt;-->
+                <!--<div class="col-md-8 col-md-offset-1">-->
+                    <!--col-md-8-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--列排序，改变列的顺序-->
+        <div class="col-md-3 col-md-push-9">col-md-3</div>
+        <div class="col-md-9 col-md-pull-3">col-md-9</div>
+    </div>
+</div>
+</body>
+</html>

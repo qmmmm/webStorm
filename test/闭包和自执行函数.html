@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var g = 0;
+    function f() {
+        // 这里面就形成了一个方法作用域, 能够保护其中的变量不能被外部访问
+        // 方法作用域能够访问全局作用域
+        var a = 1;
+//        console.log(g);
+
+        // 嵌套方法作用域
+        (function ff() {
+            // 这里面再度形成了一个方法作用域
+            // 其中可以访问外部的那个方法作用域
+            var aa = 2;
+            console.log(a);
+        }())
+
+        // 出了 ff 的作用域就不能访问其中的东西了
+//         console.log(aa); // 报错 ReferenceError: aa is not defined
+    }
+    f();
+//     console.log(a); // 报错 ReferenceError: a is not defined
+</script>
+</body>
+</html>
