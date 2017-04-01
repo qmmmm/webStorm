@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var name='world';
+//    (function () {
+//        if(typeof name==='undefined'){
+////            变量提升
+//            var name='jack';
+//            console.log('goodbey：'+name);
+//        }else {
+//            console.log('hello：'+name);
+//        }
+//    })();
+//    相当于如下
+
+    var name='world';
+    (function () {
+        var name;
+        if(typeof name==='undefined'){
+            name='jack';
+            console.log('goodbey'+name);
+        }else {
+            console.log('hello'+name);
+        }
+    })();
+</script>
+
+</body>
+</html>

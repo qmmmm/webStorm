@@ -24,8 +24,21 @@
 //    alert(Number(null));//null\empty\0,number默认把其转换为0
 //    alert(Number(0));//弹出0
 //    alert(Number(empty));//什么也没弹出，弹都没弹。
-    alert(Number(undefined));//NaN
-    console.log("aa");
+//    alert(Number(undefined));//NaN
+//    console.log("aa");
+
+//    js的typeof运算符的可能结果；（6+1）种，number，string，function，object，boolean，undefined＋symbol
+//ECMAScript拥有：5个基础数据类型：number，string，boolean，null，undefined
+//1个引用数据类型：object（本质上是由一组无序的名值对组成。）
+//还有1个新增的symbol
+    console.log(typeof Symbol());
+    console.log(typeof Number());
+    console.log(typeof String());
+    console.log(typeof Function());
+    console.log(typeof Object());
+    console.log(typeof null);
+    console.log(typeof Boolean());
+    console.log(typeof undefined);
 
 </script>
 </body>
