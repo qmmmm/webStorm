@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function catchEvent(eventObj, event, eventHandler) {
+            if(eventObj.addEventListener){
+                eventObj.addEventListener(event,eventHandler,false);
+            }else if (eventObj.attachEvent){
+                event="on"+event;
+                eventObj.attachEvent(event,eventHandler);
+            }
+        }
+        catchEvent(window,"load",setupEvents);
+        function setupEvents(evnt) {
+            document.forms[0].elements[0].focus();
+            var evtObject=document.getElementById("panicbutton");
+            catchEvent(evtObject,"click",openHelp);
+        }
+        function openHelp(x) {
+            var optionString="width=200,height=200,menubar=no,toolbar=no,scrollbars=no,location=no,resizeable=no";
+            var helpWindow=window.open("help.html","test","optionString");
+            helpWindow.focus();
+            helpWindow.moveTo(x.screenX,x.screenY);
+            return false;
+        }
+    </script>
+</head>
+<body>
+<form action="" id="currentForm">
+    <p>
+        your name: <input type="text" size="50">
+    </p>
+</form>
+<div id="panicbutton" style="width: 100px;height: 40px;background-color: #f00;padding: 5px;margin-left: 50px">
+    <p>click for help</p>
+</div>
+</body>
+</html>

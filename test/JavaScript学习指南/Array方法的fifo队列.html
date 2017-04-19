@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function pushPop() {
+        var fifoArray=new Array();
+        fifoArray.push("apple");
+        fifoArray.push("banana");
+        var ln=fifoArray.push("cherry");
+        document.writeln("length is "+ln+" and array is "+fifoArray+"<br />");
+
+        for (var i=0;i<ln;i++){
+            document.writeln(fifoArray.shift()+"<br />");
+        }
+        document.writeln("length now is "+fifoArray.length+"<br /><br />");
+
+
+        var fifoNewArray=new Array();
+        fifoNewArray.unshift("learning");
+        fifoNewArray.unshift("java");
+        ln=fifoNewArray.unshift("script");
+        document.writeln("length is "+ln+" and array is "+fifoNewArray+"<br />");
+
+        for (var i=0;i<ln;i++){
+            document.writeln(fifoNewArray.pop()+"<br />");
+        }
+        document.writeln("new length is "+fifoNewArray.length);
+
+
+
+
+    }
+    pushPop();
+</script>
+</body>
+</html>

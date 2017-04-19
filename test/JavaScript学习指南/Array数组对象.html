@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    window.onload=function () {
+        //    通过构造函数创建数组
+//    var newArray=new Array('one','two');
+//    作为字面量值创建数组
+//    var newArray1=['one','two'];
+
+        var fruitArray=new Array('apple','peach','orange','lemon','lime','cherry');
+        var removed=fruitArray.splice(2,2,'melon','banana');
+        document.writeln(removed+"<br />");
+        document.writeln(fruitArray);
+    }
+
+</script>
+</body>
+</html>

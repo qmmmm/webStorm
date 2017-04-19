@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    window.onload=function () {
+        var quoteArray=new Array(5);
+        quoteArray[0]="quote one";
+        quoteArray[1]="quote two";
+        quoteArray[2]="quote three";
+        quoteArray[3]="quote four";
+        quoteArray[4]="quote five";
+
+//        random是生成0-1的随机数字，而不是0-9
+        iValue=Math.random();
+        iValue*=5;
+        iValue=Math.floor(iValue);
+        alert(quoteArray[iValue]);
+    }
+</script>
+</body>
+</html>

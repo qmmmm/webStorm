@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1{
+            background-color: #ffff00;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <p>hello css</p>
+</div>
+<script type="text/javascript">
+    function getStyle(obj, jsprop, cssprop) {
+        if (obj.currentStyle){
+            alert('currentStyle'+obj.currentStyle[jsprop]);
+        }else if (window.getComputedStyle){
+            alert('getComputedStyle'+document.defaultView.getComputedStyle(obj,null).getPropertyValue(cssprop));
+        }else {
+            alert("neither currentStyle nor getComputed supported");
+        }
+    }
+    function changeElement() {
+        var obj=document.getElementById("div1");
+        alert(obj.style.backgroundColor);
+        getStyle(obj,"backgroundColor","backgrouond-color");
+        obj.style.backgroundColor="#ff0000";
+        alert(obj.style.backgroundColor);
+    }
+    document.onclick=changeElement;
+</script>
+</body>
+</html>

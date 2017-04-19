@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" id="someForm">
+    <p>
+        <select name="" id="selectOpts" multiple="multiple">
+            <option value="Opt1">Option One</option>
+            <option value="Opt1a">--option oneA</option>
+
+            <option value="Opt2">Option Two</option>
+
+            <option value="Opt3">Option Three</option>
+            <option value="Opt3a">--option threeA</option>
+
+            <option value="Opt4">Option four</option>
+            <option value="Opt4a">--option fourA</option>
+
+            <option value="Opt5">Option five</option>
+        </select>
+        <input type="submit" value="Submit">
+    </p>
+</form>
+<script>
+    function catchEvent(eventObj, event, eventHandler) {
+        if(eventObj.addEventListener){
+            eventObj.addEventListener(event,eventHandler,false);
+        }else if (eventObj.attachEvent){
+            event="on"+event;
+            eventObj.attachEvent(event,eventHandler)
+        }
+    }
+    function cancelEvent(event) {
+        if (event.preventDefault){
+            event.preventDefault();
+            event.stopPropagation();
+        }else {
+            event.returnValue=false;
+            event.cancelBubble=true;
+        }
+    }
+    catchEvent(window,"load",setupEvents);
+
+    function setupEvents(evnt) {
+        catchEvent(document.getElementById("someForm"),"change",checkSelect);
+    }
+    function checkSelect(evnt) {
+        var theEvent=evnt?evnt:window.event;
+
+        var opts=document.getElementById("someForm").selectOpts.options;
+        for (var i=0;i<opts.length;i++){
+            if (opts[i].selected){
+                switch (opts[i].value){
+                    case "Opt1":opts[i+1].selected=true;
+                        break;
+                    case "Opt3":opts[i+1].selected=true;
+                        break;
+                    case "Opt4":opts[i+1].selected=true;
+                        break;
+                }
+            }
+        }
+        cancelEvent(theEvent);
+    }
+</script>
+</body>
+</html>

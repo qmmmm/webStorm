@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    window.onload=function () {
+        var dtNow=new Date();
+        dtNow.setDate(18);
+        dtNow.setMonth(10);
+        dtNow.setYear(1954);
+        dtNow.setHours(7);
+        dtNow.setMinutes(2);
+        document.writeln(dtNow.toString()+"<br />");
+        document.writeln(dtNow.toLocaleString()+"<br />");
+        document.writeln(dtNow.toLocaleDateString()+"<br />");
+        document.writeln(dtNow.toLocaleTimeString()+"<br />");
+        document.writeln(dtNow.toGMTString()+"<br />");
+        document.writeln(dtNow.toUTCString());
+
+    }
+</script>
+</body>
+</html>

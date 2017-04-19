@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        获取鼠标点击位置的x，y坐标
+        function mouseDown(nsEvent) {
+//            判断nsEvent对象是否已定义，如果已定义，那么就将其赋给应用程序中的变量（这个是支持其他浏览器的），
+//            否则，将把window对象的event属性值赋给应用程序中的变量（这个是支持IE的）
+            var theEvent=nsEvent?nsEvent:window.event;
+            var locString="X="+theEvent.screenX+"Y="+theEvent.screenY;
+            alert(locString);
+        }
+        document.onmousedown=mouseDown;
+    </script>
+</head>
+<body>
+
+</body>
+</html>

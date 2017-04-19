@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    window.onload=function () {
+        var re=/(ds)+(j+s)/ig;
+        var str="cfdsJS*(&dsjjjsYJSjs 888dsdsJS)";
+        var resultArray=re.exec(str);
+        while (resultArray){
+            document.writeln(resultArray[0]);
+            document.writeln("next match starts at "+re.lastIndex+"<br />");
+            for (var i=1;i<resultArray.length;i++){
+                document.writeln("substring of "+resultArray[i]+"<br />");
+            }
+            document.writeln("<br />");
+            resultArray=re.exec(str);
+
+        }
+    }
+</script>
+</body>
+</html>

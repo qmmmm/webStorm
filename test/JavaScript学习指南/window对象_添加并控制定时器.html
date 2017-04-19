@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #block{
+            width:400px;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            document.getElementById("block").style.backgroundColor="#fff";
+            setTimeout("colorFlash(255)",300);
+        }
+        function colorFlash(newColor) {
+            var hexVal=newColor.toString(16);
+
+            if (hexVal.length<2){
+                hexVal="0"+hexVal;
+            }
+//            hexVal是颜色值的后两位
+
+            var colorString="#ffff"+hexVal;
+            var blockDiv=document.getElementById("block");
+            blockDiv.style.backgroundColor=colorString;
+            if (newColor>0){
+                newColor-=5;
+                setTimeout("colorFlash("+newColor+")",50);
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="block">
+    <h1>hello </h1>
+</div>
+</body>
+</html>

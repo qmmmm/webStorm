@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="clickme" style="background-color: #ff0;width: 200px;height: 200px;padding: 200px;">
+    <p>click me</p>
+</div>
+<script>
+//    IE的fromElement和firefox的relatedTarget属性通过鼠标事件获取鼠标从哪个对象移开
+//IE的aretoElement和mozilla 的currentTarget获取鼠标移动到的那个对象
+//IE的srcElement和mozilla的target属性用来表示接收事件的对象
+    function clickMe(evnt) {
+        var eventTarget=evnt.target?evnt.target:evnt.srcElement;
+        alert(eventTarget+" "+evnt.type);
+
+//        该事件是否能够取消
+        var canBeCanceled=evnt.cancelable?evnt.cancelable:"NA";
+        alert("Can be canceled? "+canBeCanceled);
+//是否是冒泡事件
+        var bubbleEvent=evnt.bubbles?evnt.bubbles:"NA";
+        alert("Bubbling? "+bubbleEvent);
+
+        var theTime=evnt.timeStamp?evnt.timeStamp:"NA";
+        alert(theTime);
+    }
+    window.onload=setup;
+    window.onunload=cleanUp;
+
+    function setup(evnt) {
+        var evtObject=document.getElementById("clickme");
+//        测试对象模型
+        if(evtObject.addEventListener){
+            evtObject.addEventListener("click",clickMe,false);
+        }else if (evtObject.attachEvent){
+            evtObject.attachEvent("onclick",clickMe);
+        }else if (evtObject.onclick){
+            evtObject.onclick=clickMe;
+        }
+    }
+//    清理
+    function cleanUp() {
+        var evtObject=document.getElementById("clickme");
+        if (evtObject.detachEvent){
+            evtObject.detachEvent("onclick",clickMe);
+        }
+    }
+</script>
+</body>
+</html>

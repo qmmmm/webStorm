@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="runRecursion()">
+<script>
+    function runRecursion() {
+//        indexVal是说从numArray的第几个数字开始加
+        var addNumbers=function sumNumbers(numArray, indexVal, resultArray) {
+            if (indexVal==numArray.length)
+                return resultArray;
+            resultArray[0]+=Number(numArray[indexVal]);
+
+            if (resultArray[1].length>0){
+                resultArray[1]+=" and ";
+            }
+            resultArray[1]+=numArray[indexVal].toString();
+            indexVal++;
+            return sumNumbers(numArray,indexVal,resultArray);
+        };
+//    创建数值数组和结果数组
+        var numArray=['1','35.4','-14','44','0.5'];
+        var resultArray=new Array(0,'');
+        var result=addNumbers(numArray,0,resultArray);
+        document.writeln(result[0]+"<br />");
+        document.writeln(result[1]);
+    }
+
+</script>
+</body>
+</html>

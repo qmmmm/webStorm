@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var currentPhoto=0;
+        var pics=new Array();
+        window.onload=function () {
+            for (var i=0;i<5;i++){
+                pics[i]=new Image();
+
+            }
+            pics[0].src="../images/d01.jpg";
+            pics[1].src="../images/d02.jpg";
+            pics[2].src="../images/d03.jpg";
+            pics[3].src="../images/d04.jpg";
+            pics[4].src="../images/d05.jpg";
+
+            document.getElementById("next").onclick=nextPic;
+            document.getElementById("prev").onclick=prevPic;
+        }
+        function changePhoto(photo) {
+            document.images[0].src=pics[photo].src;
+
+        }
+        function nextPic() {
+            currentPhoto++;
+            if (currentPhoto<pics.length){
+                changePhoto(currentPhoto);
+            }else {
+                alert("at the end of the photo list");
+            }
+        }
+        function prevPic() {
+            if (currentPhoto>0){
+                currentPhoto--;
+                changePhoto(currentPhoto);
+            }else {
+                alert("at the begining of the photo list");
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="next"><span>next</span></div>
+<div id="prev"><span>previous</span></div>
+<img src="../images/d01.jpg" alt="">
+</body>
+</html>

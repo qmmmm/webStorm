@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function catchEvent(eventObj, event, eventHandler) {
+            if (eventObj.addEventListener){
+                eventObj.addEventListener(event,eventHandler,false);
+            }else if (eventObj.attachEvent){
+                event="on"+event;
+                eventObj.attachEvent(event,eventHandler);
+            }
+        }
+        catchEvent(window,"load",function () {
+            catchEvent(document.forms[0],"click",colorChange);
+        });
+//        使用iframe的远程脚本
+        function colorChange() {
+            var colors=document.forms[0].color;
+            var result=document.getElementById("result");
+            for (var i=0;i<colors.length;i++){
+                if(colors[i].checked){
+                    var myFrame=document.getElementById("myFrame");
+                    myFrame.contentWindow.location.href="service.php?color="+colors[i].value;
+                    myFrame.onload=function () {
+                        result.innerHTML=myFrame.contentWindow.document.getElementById("val2").innerHTML;
+                    }
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div>
+    <form action="">
+        <p>
+            <input type="radio" name="color" value="red">red <br>
+            <input type="radio" name="color" value="blue">blue
+        </p>
+    </form>
+</div>
+<iframe src="service.php" frameborder="0" name="myFrame" id="myFrame" style="width: 0;height: 0;border: 0;"></iframe>
+<div id="result"></div>
+</body>
+</html>

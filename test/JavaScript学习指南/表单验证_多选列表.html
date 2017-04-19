@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" id="someForm">
+    <p>
+        <select name="" id="selectOpts" multiple="multiple">
+            <option value="Opt1">Option One</option>
+            <option value="Opt2">Option Two</option>
+            <option value="Opt3">Option Three</option>
+        </select>
+        <input type="submit" value="Submit">
+    </p>
+</form>
+<script>
+    function catchEvent(eventObj, event, eventHandler) {
+        if(eventObj.addEventListener){
+            eventObj.addEventListener(event,eventHandler,false);
+        }else if (eventObj.attachEvent){
+            event="on"+event;
+            eventObj.attachEvent(event,eventHandler)
+        }
+    }
+    catchEvent(window,"load",setupEvents);
+    function setupEvents(evnt) {
+        catchEvent(document.getElementById("someForm"),"submit",checkForm);
+    }
+    function checkForm(evnt) {
+        var opts=document.getElementById("someForm").selectOpts.options;
+        for (var i=0;i<opts.length;i++){
+            if (opts[i].selected){
+                alert(opts[i].text+" "+opts[i].value);
+            }
+        }
+//        没有任何服务器端处理，取消submit事件
+        return false;
+    }
+</script>
+</body>
+</html>

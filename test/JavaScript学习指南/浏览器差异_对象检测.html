@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div{
+            position: absolute;
+            top:30px;
+            left:50px;
+        }
+        #div1 img{
+            -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src=fig0902.png,sizingMethod='scale');
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            document.getElementById("div1").onclick=getSrc;
+        }
+        function getSrc(evnt) {
+            var theEvent=evnt?evnt:window.event;
+            var theSrc=theEvent.target?theEvent.target:theEvent.srcElement;
+            alert(theSrc.src);
+        }
+    </script>
+</head>
+<body>
+<div id="div1">
+    <img src="../images/1.png" alt="">
+</div>
+<script>
+
+</script>
+</body>
+</html>

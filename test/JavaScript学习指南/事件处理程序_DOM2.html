@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" style="background-color: #f00;width: 100px;height: 100px;padding: 10px;">
+    <p>
+        <input type="submit" value="Submit"><br>
+    </p>
+
+</form>
+<script>
+    function cascadeDown(evnt) {
+        alert("Capturing:"+this);
+//        evnt.stopPropagation();
+    }
+    function bubbleUp(evnt) {
+        alert("Bubbling: "+this);
+    }
+    window.onload=setup;
+    function setup(evnt) {
+//        时间捕获
+        document.addEventListener('click',cascadeDown,true);
+        document.forms[0].addEventListener('click',cascadeDown,true);
+        document.forms[0].elements[0].addEventListener('click',cascadeDown,true);
+
+//        事件冒泡
+        document.addEventListener('click',bubbleUp,false);
+        document.forms[0].addEventListener('click',bubbleUp,false);
+        document.forms[0].elements[0].addEventListener('click',bubbleUp,false);
+//        document.forms[0].elements[0].removeEventListener('click',bubbleUp,false);
+    }
+</script>
+</body>
+</html>

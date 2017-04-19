@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="testingCallbacks()">
+<script>
+    function checkColor(element, index, array) {
+        return (element>=0&&element<=255);
+    }
+    function checkCount(element,index,array) {
+        return (element.length==3);
+    }
+    function testingCallbacks() {
+//        color数组
+        var colors=new Array();
+        colors[0]=[0,262,255];
+        colors[1]=[255,255,255];
+        colors[2]=[255,0,0];
+        colors[3]=[0,255,0];
+        colors[4]=[0,0,255];
+        colors[5]=[-5,999,255];
+        colors[6]=[255,255,1204556];
+
+//        基于颜色值范围进行过滤
+        var testedColors=new Array();
+        for (var i in colors){
+            testedColors[i]=colors[i].filter(checkColor);
+        }
+//        输出第一轮的结果
+        document.writeln("<h3>first check</h3>")
+        for (i in testedColors){
+            document.writeln(testedColors[i]+"<br />");
+        }
+//        过滤出少于三个值的元素
+        var newTested=testedColors.filter(checkCount);
+
+//        输出余下的元素
+        document.writeln("<br /><h3>second</h3>");
+        for (i in newTested){
+            document.writeln(newTested[i]+"<br />")
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" id="someForm">
+    <p>
+        <input type="checkbox" name="color1" value="red" >:red<br >
+        <input type="checkbox" name="color2" value="blue" >:blue<br >
+        <input type="checkbox" name="color3" value="green" >:green<br >
+        <input type="checkbox" name="color4" value="yellow" >:yellow<br >
+
+        <input type="submit" value="Submit">
+    </p>
+</form>
+<script>
+    function catchEvent(eventObj, event, eventHandler) {
+        if(eventObj.addEventListener){
+            eventObj.addEventListener(event,eventHandler,false);
+        }else if (eventObj.attachEvent){
+            event="on"+event;
+            eventObj.attachEvent(event,eventHandler)
+        }
+    }
+    function cancelEvent(event) {
+        if (event.preventDefault){
+            event.preventDefault();
+            event.stopPropagation();
+        }else {
+            event.returnValue=false;
+            event.cancelBubble=true;
+        }
+    }
+    catchEvent(window,"load",setupEvents);
+
+    function setupEvents(evnt) {
+        catchEvent(document.getElementById("someForm"),"submit",checkColors);
+    }
+    function checkColors(evnt) {
+        var theEvent=evnt?evnt:window.event;
+
+        var colorOpts=document.getElementById("someForm").getElementsByTagName("input");
+
+        var isChecked=false;
+        for (var i=0;i<colorOpts.length;i++){
+            if ((colorOpts[i].type=="checkbox")&&(colorOpts[i].checked)){
+                isChecked=true;
+                alert("en ,选了一个至少");
+                break;
+            }
+        }
+//        没有选中复选框
+        if (!isChecked){
+            alert("you must check one of the four color checkboxes");
+            cancelEvent(theEvent);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    window.onload=function () {
+        var regExp=/:\D*\s\d+\s\d+/;
+        var str="this is a date: March 12 2009";
+        var resultString=str.match(regExp);
+//        str的match方法
+        alert("Date"+resultString);
+    }
+</script>
+</body>
+</html>

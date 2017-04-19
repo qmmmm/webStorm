@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var theFrame=document.getElementById("thelink");
+            theFrame.onclick=function () {
+                parent.frameb.location.replace("framea.html");
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>frame a</h1>
+<p>
+    <a href="" id="thelink">steal this page</a>
+</p>
+</body>
+</html>

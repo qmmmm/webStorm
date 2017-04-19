@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="testParams()">
+<script>
+//    基于原始值（如字符串、布尔值、或者数字等）的变量是按值传递给函数的，这就意味着
+//    如果在函数中修改实际参数值，那么它是不会影响主调程序的。
+
+//对于传递给函数的对象而言传递的则是一个引用。在函数中
+//对这个对象的修改将会反映在主调程序中。
+    function alertArgs(strLiteral, aryObject) {
+        strLiteral="Override";
+        aryObject[1]="2";
+        aryObject[aryObject.length]="three";
+    }
+   function testParams() {
+       var str="Original literal";
+       var ary=new Array("one","two");
+       document.writeln("string literal is "+str+"<br />");
+       document.writeln("Array Object is "+ary+"<br />");
+//第一个参数是字符串变量，函数中的代码将对这些参数进行修改，然后在主调程序中输出其内容。
+//       字符串变量的值没有变化，因为它传入的只是原始值。
+//       而数组对象的第二个成员的值就修改了，而且还增加了第三个成员（因为它传递的数组是一个对象，传递的就是一个引用）
+
+       alertArgs(str,ary);
+       document.writeln("string literal is "+str+"<br />");
+       document.writeln("Array object is "+ary);
+
+   }
+//   函数可以没有return语句，也可以有多条return语句，只要遇到return语句，
+//    就会停止函数代码的执行，并且将控制权返回主调语句。
+</script>
+</body>
+</html>

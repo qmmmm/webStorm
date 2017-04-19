@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" id="someForm">
+    <p>
+        <input type="text" name="text1" id="text1"><br>
+        <input type="password" name="text2" id="text2"><br>
+        <input type="hidden" name="text3" value="hidden value">
+        <textarea name="text4" id="text4" cols="50" rows="10">the text area</textarea>
+
+        <input type="submit" value="Submit">
+    </p>
+</form>
+<script>
+    function catchEvent(eventObj, event, eventHandler) {
+        if(eventObj.addEventListener){
+            eventObj.addEventListener(event,eventHandler,false);
+        }else if (eventObj.attachEvent){
+            event="on"+event;
+            eventObj.attachEvent(event,eventHandler)
+        }
+    }
+    catchEvent(window,"load",setupEvents);
+
+    function setupEvents(evnt) {
+//验证password不能为空
+        catchEvent(document.getElementById("text2"),"blur",checkRequired);
+//        验证第一个输入框输入的是ssn号，要匹配正则表达式
+        catchEvent(document.getElementById("text1"),"change",validateField);
+    }
+    function checkRequired(evnt) {
+        var theEvent=evnt?evnt:window.event;
+
+//        接收事件的对象
+        var target=theEvent.target?theEvent.target:theEvent.srcElement;
+
+        var txtInput=target.value;
+        if(txtInput==null||txtInput==""){
+            alert("value is required in field");
+        }
+    }
+    function validateField(evnt) {
+        var theEvent=evnt?evnt:window.event;
+        var target=theEvent.target?theEvent.target:theEvent.srcElement;
+
+        var rgEx=/^\d{3}[-]?\d{2}[-]?\d{4}$/g;
+        var OK=rgEx.exec(target.value);
+
+        if (!OK){
+            alert("not an ssn");
+        }
+//        alert(strResults);
+//        alert(document.getElementById("text4").value);
+    }
+</script>
+</body>
+</html>

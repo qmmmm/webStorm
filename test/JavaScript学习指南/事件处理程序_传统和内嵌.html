@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--传统的事件处理也叫DOM 0级事件处理-->
+
+<!--任何对象只允许指定一个事件处理程序，因此指定的函数不会累加，所以，只有一个弹出框-->
+<!--如果想要针对某一个特定对象的某个事件指定多个函数，则需要在事件处理程序代码中列出它们-->
+<!--例如：内嵌模式的话就要写-->
+<!--<body onload="helloMsg();helloTwice()">-->
+
+<body onload="helloMsg();">
+<p>some content</p>
+<script>
+    function helloMsg() {
+        var helloString="hello there";
+        alert(helloString);
+    }
+    function helloTwice() {
+        var helloString="hi again";
+        alert(helloString);
+    }
+    window.onload=helloTwice;
+//    如果使用传统模式的话，
+//    function helloMsg() {
+//        var helloString="hello there";
+//        alert(helloString);
+//        helloTwice();
+//    }
+</script>
+</body>
+</html>

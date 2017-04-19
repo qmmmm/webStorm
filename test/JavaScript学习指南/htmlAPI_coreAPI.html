@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var href=document.links;
+            var hrefs=document.getElementById("hrefs");
+            for (var i=0;i<href.length;i++){
+                var thishref=href[i].href;
+                var p=document.createElement("p");
+                var txt=document.createTextNode(thishref);
+                p.appendChild(txt);
+                hrefs.appendChild(p);
+            }
+        }
+//        采用HTMLAPI访问links集合中的每个链接元素，并获取每个link元素的href属性；
+//        然后采用CoreAPI创建一个新的paragraph元素和文本节点，并将它们添加到页面中。
+    </script>
+</head>
+<body>
+<p>
+    a
+    <a href="http://www.baidu.com">1</a>aa
+    <a href="dddddd">2</a>bb
+    <a href="gggggg">3</a>
+</p>
+<div id="hrefs">
+    <h3>the links</h3>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="buildFunction()">
+<script>
+//    js处理应用程序时，和声明试函数不一样，它将动态创建一个匿名函数；
+//    每次调用匿名函数时，都动态地重新构建该函数，放在循环中的话就会每循环一次都要构造一次
+
+//不过，对于定义 在运行时 才能满足确定需求的 必备功能而言，动态函数是一个很好的方法。
+
+    function buildFunction() {
+        var func=prompt("enter function body: ");
+        var x=prompt("enter value of x:");
+        var y=prompt("enter value of y:");
+
+        var op=new Function("x","y",func);
+        var theAnswer=op(x,y);
+
+        alert("Function is:"+func);
+        alert("x is: "+x+"  y is :"+y);
+        alert("the answer is: "+theAnswer);
+    }
+</script>
+</body>
+</html>

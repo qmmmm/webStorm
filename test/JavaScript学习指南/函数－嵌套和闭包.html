@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="processNested()">
+<script>
+    function outerFunc(base) {
+        var punc="!";
+        return function (ext) {
+            return base+ext+punc;
+        }
+    }
+    function processNested() {
+        var baseString=outerFunc("hello ");
+        var newString=baseString("world ");
+        alert(newString);
+
+        var notherString=baseString("Reader ");
+        alert(newString);
+        alert(notherString);
+
+        var anotherBase=outerFunc("hiya,hey ");
+        var lastString=anotherBase("you ");
+        alert(newString);
+        alert(lastString);
+
+    }
+</script>
+</body>
+</html>
