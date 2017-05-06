@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function paramsUrl(url, params) {
+//        split() 方法用于把一个字符串分割成字符串数组。
+        var arrs=url.split("/");
+        var count=0;
+        for(var i=0;i<arrs.length;i++){
+//            indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。
+            if(arrs[i].indexOf(":")!==-1){
+                arrs[i]=arrs[i].split(":")[1];
+            }
+        }
+        for(var i=0;i<arrs.length;i++){
+            if(params[arrs[i]]){
+                arrs[i]=params[arrs[i]];
+            }
+        }
+//        让倒数第二个userid的值还是userid，不让e25替换掉
+        arrs[arrs.length-2]="userid";
+//        join() 方法用于把数组中的所有元素放入一个字符串。
+//        arrayObject.join(separator)
+//        separator	可选。指定要使用的分隔符。如果省略该参数，则使用逗号作为分隔符。
+        return arrs.join("/");
+
+    }
+    var url='classname/:cid/userid/:userid';
+    var params={cid:'5454',userid:'e25'};
+    console.log(paramsUrl(url,params));
+</script>
+</body>
+</html>

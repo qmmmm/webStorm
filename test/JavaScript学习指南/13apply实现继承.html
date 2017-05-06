@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Tune(title, type) {
+        this.title=title;
+        this.type=type;
+        this.getTitle=function () {
+            return "song:"+this.title+" type:"+this.type;
+        }
+    }
+    function Artist_tune(title, type, artist) {
+        this.artist=artist;
+        this.toString("Artist is "+artist);
+        Tune.apply(this,arguments);
+        this.toString=function () {
+            return "artist:"+this.artist+" "+this.getTitle();
+        }
+    }
+    window.onload=function () {
+        Artist_tune.prototype=new Tune();
+        var song=new Artist_tune(" i want to hold your hand ","rock","beatles");
+        document.writeln(song.toString());
+    }
+</script>
+</body>
+</html>

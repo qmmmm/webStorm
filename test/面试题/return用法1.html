@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script type="text/javascript">
+    //函数表达式
+    var box = function(){
+        var a=1;
+        return function(){
+            alert(++a);
+        };
+//        alert(a);//永远不会执行，因为return之后的代码是不会执行的。
+    };
+    alert(box());//弹出"function(){alert(a++)}"
+    alert(a);
+
+//    alert(box()());//先弹出1，再弹出undefined
+//    alert(alert(1));//跟上面一样
+    //        console.log(alert(1));//undefined
+    //        console.log(typeof alert(1));//类型也是undefined（字符串）
+
+//     box()();//只弹出1，（box（）执行了一下这个函数，box（）（）由执行了return的那个函数，所以弹出1）
+
+</script>
+</body>
+</html>

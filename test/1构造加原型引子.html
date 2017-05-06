@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        function Car(){ }
+
+        Car.prototype.material = "steel";
+
+        var car1 = new Car();
+        var car2 = new Car();
+
+        document.write(car1.material+"<br>");  //prints "steel"
+        document.write(car2.material+"<br><br>");  //prints "steel"
+
+//        car1.prototype.material = "iron"
+        // compile error:car1.prototype is undefined
+//        因为类的实例没有prototype属性
+
+        car1.material = "iron";
+
+        document.write(car1.material+"<br>");  //prints "iron"
+        document.write(car2.material+"<br>");  //prints "steel"
+        document.write(Car.prototype.material+"<br><br>"); //prints "steel"
+
+        Car.prototype.material = "wood";
+        var car3 = new Car();
+        document.write(car1.material+"<br>");  //prints "iron"
+        document.write(car2.material+"<br>" ); //prints "wood"
+        document.write(car3.material+"<br>" ); //prints "wood"
+        document.write(Car.prototype.material+"<br>"); //prints "wood"
+
+    </script>
+</body>
+</html>

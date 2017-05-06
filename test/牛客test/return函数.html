@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Foo() {
+        var i = 0;
+        return function() {
+            console.log(i++);
+//            return i++;
+        }
+    }
+
+    var f1 = Foo(),
+            f2 = Foo();
+    alert(f1);//返回的是整个函数
+//    alert(f1());//返回的是里面函数的运行结果
+    f1();
+    f1();
+    f2();
+</script>
+</body>
+</html>

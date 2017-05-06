@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul class="meitu">
+    <li>xiuxiu</li>
+    <li>xiuxiu</li>
+    <li>xiuxiu</li>
+    <li>xiuxiu</li>
+</ul>
+<ul class="mtfe">
+    <li>meipai</li>
+    <li>meipai</li>
+    <li>meipai</li>
+    <li>meipai</li>
+</ul>
+<script>
+    var mtfe=document.getElementsByClassName("mtfe")[0];
+    var lis=mtfe.getElementsByTagName("li");
+    for (var i=0;i<lis.length;i++){
+        lis[i].onclick=function () {
+            alert(this.innerHTML);
+        }
+    }
+
+</script>
+</body>
+</html>

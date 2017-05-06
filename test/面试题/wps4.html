@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function aaa(value) {
+        switch (value){
+            case 'A':
+                console.log(1);
+                break;
+            case 'string':
+                console.log(2);
+                break;
+            case 'String':
+                console.log(3);
+                break;
+            case String:
+                console.log("String");
+                break;
+            case 'undefined':
+                console.log(4);
+                break;
+            case undefined:
+                console.log(5);
+                break;
+
+            case "object":
+                console.log("objectString");
+                break;
+            case Object:
+                console.log("daObject");
+                break;
+            default:
+                console.log(6);
+                break;
+        }
+    }
+    aaa(new String("A"));
+//    console.log(new String("A"));
+</script>
+</body>
+</html>

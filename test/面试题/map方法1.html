@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    一个新数组，其中的每个元素均为关联的原始的数组元素的回调函数的返回值
+    function AreaOfCircle(radius) {
+        var area=Math.PI*(radius*radius);
+        return area.toFixed(0);
+    }
+    var radii=[10,20,30];
+    var areas=radii.map(AreaOfCircle);
+    document.writeln(areas);
+</script>
+</body>
+</html>

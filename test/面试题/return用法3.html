@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    由于++操作符的特性，会先return q；然后q再加加，return后面的表达式是会执行的，只是return返回的不一定会是这个表达式的值吧。
+    var q=2;
+    function fun(){
+        return q++;
+    }
+    alert(fun());
+    console.log(q);
+</script>
+</body>
+</html>

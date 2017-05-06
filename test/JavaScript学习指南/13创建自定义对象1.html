@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    通过创建函数
+    var Tune=function (title) {
+        this.title=title;
+        var performedBy=new Array();
+        this.addPerformers=function (performer) {
+            var i=performedBy.length;
+            performedBy[i]=performer;
+        }
+        this.listPerformers=function () {
+            var singers="";
+            for (var  i=0;i<performedBy.length;i++){
+                singers+=performedBy[i]+" ";
+            }
+            return singers;
+        }
+    }
+    window.onload=function () {
+        var song=new Tune("hello");
+        song.addPerformers("me");
+        song.addPerformers("you ");
+        song.addPerformers("us");
+        document.writeln("song is "+song.title);
+        document.writeln("performed by "+song.listPerformers());
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="wps1.html" onclick="return add()" target="_blank">open</a>
+<a href="wps1.html" onclick="add()" target="_blank">open2</a>
+<script>
+    function add() {
+        console.log("111");
+//        return true;//return true的时候，两个链接都会打开页面
+        return false;//return false的时候，第一个链接不能打开页面，因为onclick="return false";
+    }
+
+</script>
+</body>
+</html>

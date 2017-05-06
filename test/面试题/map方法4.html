@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function char(value, index, str) {
+        return str.substring(index-1,index+2);
+    }
+    var word='thursday';
+    var result=[].map.call(word,char);
+    document.writeln(result);
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    全部变量var ab="nbc"相当于window.ab="nbc"
+    var ab="nbc";
+    function test(){
+//        但是局部变量var ab="nnc"不等于this.ab="nnc"
+        var ab="nnc";
+        function inner(){
+//            局部变量只有直接写this.ab="ccd"的时候，下面的打印才能打印出这个
+//            如果该函数中没有this.ab的时候，那就向上一级找，就是找test中的this.ab
+            this.ab="ccd";
+            console.log(this.ab);
+        }
+        inner();
+    }
+    test();
+</script>
+</body>
+</html>

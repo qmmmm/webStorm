@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="tt">
+
+</div>
+<script>
+    console.log(([]+[]).length);//0
+    console.log(({}+{}).length);//30
+
+    console.log(({}).toString());//[object Object],相加的时候，加号把这个转换成字符串,自动调用toString方法，每一个的长度是15
+    console.log(([]).toString());//""
+
+    console.log([].length);//数组有长度，但是对象并没有长度
+    console.log({}.length);//对象没有长度，所以结果是undefined
+
+    console.log(({}).toString().length);//15
+    console.log(([]).toString().length);//0
+    var tt=document.getElementById("tt");
+    console.log(typeof tt);
+
+//    为什么[].toString()不是[object array],而{}.toString()是[object Object]
+//    因为js的好多内置对象都重写了这个方法，
+//    Array	将 Array 的每个元素转换为字符串，并将它们依次连接起来，两个元素之间用英文逗号作为分隔符进行拼接。
+//    Object(默认)	返回"[object ObjectName]"，其中 ObjectName 是对象类型的名称。
+//    http://www.365mini.com/page/javascript-tostring.htm
+
+//    数组对象和普通对象都要先toString转换成字符串，再toNumber转换成数字，才能和后面的false给toNumber转换成数字才能比较判断是否相等
+
+    console.log(([0].toString()));//0
+    console.log({x:0}.toString());//[object Object]
+    //    布尔值false＝＝0
+    console.log(([])?true:false);
+    console.log(([]==0?true:false));
+    console.log(({}==0)?true:false);
+
+    console.log(([0])?true:false);
+    //array.toString()转换成字符串，Number(array.toString());在转化成数字类型
+    //toNmuber(false)结果是0
+    console.log(([0]==false?true:false));
+
+    console.log(({x:0}==false)?true:false);
+</script>
+</body>
+</html>

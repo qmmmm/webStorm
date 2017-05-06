@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function sliceArr(arr,n) {
+        var arrSplit=[];
+        switch (n){
+            case 0:
+            case 1:
+                return arr;
+                break;
+            case n>arr.length:
+                return arr;
+                break;
+            case 2:
+                for(var i=0;i<arr.length;i++){
+                    arrSplit=arr.slice(i,i+2);
+
+
+                }
+                break;
+            default:return "不能分割";
+
+        }
+    }
+    var arr=[1,2,3,4,5,6];
+    console.log(sliceArr(arr,1));
+    console.log(sliceArr(arr,9));
+</script>
+</body>
+</html>

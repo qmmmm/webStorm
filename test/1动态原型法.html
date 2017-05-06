@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Car(color, title){
+        this.color = color;
+        this.title = title;
+        if (typeof Car._initialized == "undefined") {
+            Car.prototype.start = function(){
+                alert("Bang!!!");
+            };
+            Car.prototype.material = "steel";
+            Car._initialized = true;
+        }
+    }
+</script>
+</body>
+</html>

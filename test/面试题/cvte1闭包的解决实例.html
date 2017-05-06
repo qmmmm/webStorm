@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    var arr=[1,2,3,4,5,6,7,8,9];
+    //    通过for循环每隔两秒按顺序打印出arr中的数字
+
+    function arrPrint(arr) {
+//        function printArr(e) {
+//            return function () {
+//                console.log(e);
+//            }
+//        }
+        for(var i=0;i<arr.length;i++){
+//            方案一
+            (function(e) {
+                setTimeout(function () {
+                    console.log(arr[e]);
+                },e*1000);
+            })(i);
+
+//            方案2
+//            setTimeout((function (e) {
+//                return function () {
+//                    console.log(arr[e])
+//                }
+//            })(i),i*1000);
+
+//            方案3
+//            setTimeout(console.log.bind(console,arr[i]),i*1000);
+
+//            方案4类似于方案2。把for外面写一个函数,不用方案4的时候外面的函数要注释掉
+//            setTimeout(printArr(arr[i]),i*1000);
+        }
+    }
+    var arr=[1,2,3,4,5,6,7,8,9,10];
+    arrPrint(arr);
+</script>
+</body>
+</html>

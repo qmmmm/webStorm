@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    通过创建对象实例,然后使用对象的prototype为属性和方法进行赋值
+    function Tune(title) {
+        this.title=title;
+    }
+    function printTitle() {
+        document.writeln(this.title+"<br>");
+    }
+    window.onload=function () {
+        Tune.prototype.print=printTitle;
+        var oneTune=new Tune("onetune");
+        oneTune.print();
+
+        var anotherTune=new Tune("another tune");
+        anotherTune.print();
+    }
+
+</script>
+</body>
+</html>

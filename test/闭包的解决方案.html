@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    在循环中使用闭包的错误方式
+//    for(var i=0;i<10;i++){
+//        setTimeout(function () {
+//            console.log(i);
+//        },1000);
+//    }
+
+//解决方案1
+//    for(var i=0;i<10;i++){
+//        (function(e) {
+//            setTimeout(function () {
+//                console.log(e);
+//            },1000);
+//        })(i);
+//    }
+
+//解决方案2
+//    for(var i=0;i<10;i++){
+//        setTimeout((function (e) {
+//            return function () {
+//                console.log(e);
+//            }
+//        })(i),1000);
+//    }
+
+//解决方案3
+//    for(var i=0;i<10;i++){
+//        setTimeout(console.log.bind(console,i),1000);
+//    }
+
+//解决方案4相当于解决方案2！
+    function aa(e) {
+        return function () {
+            console.log(e);
+        }
+    }
+    for(var i=0;i<10;i++){
+        setTimeout(aa(i),i*1000);
+    }
+</script>
+</body>
+</html>

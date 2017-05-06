@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function change() {
+        var sixteen="abcdef";
+        var numArr=[];
+        var j=0;
+        for(var i=0;i<sixteen.length;i+=2){
+            var sub=sixteen.substring(i,i+2);
+            numArr[j++]=parseInt(sub,16);
+        }
+        var strA=numArr.join(",");
+        console.log(strA);
+
+    }
+    change();
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    bind方法与call、apply最大的不同就是bind返回一个绑定上下文的函数，
+// 而call\apply是直接执行了函数。,,,没有返回的东西，所以不能先写call，在写bind
+    (function (a) {
+        console.log(this.value+a);
+    }).bind({value:2}).call({value:3},4,5);
+</script>
+</body>
+</html>

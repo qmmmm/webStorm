@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    tune是一个基本的shell对象
+    function Tune() {
+
+    }
+//    方法
+    function printTitle() {
+        document.writeln(this.title+"<br>");
+    }
+    window.onload=function () {
+//        通过prototype属性扩展对象
+        var t=Tune.prototype;
+
+//        getter和setter
+        t.__defineSetter__("title",function (tt) {
+            this.mytitle=tt;
+        });
+        t.__defineGetter__("title",function () {
+            return this.mytitle;
+        });
+        t.print=printTitle;
+        var one=new Tune;
+        one.title="onetitle";
+        one.print();
+
+        var another=new Tune;
+        another.title="another";
+        another.print();
+
+    }
+
+
+
+
+
+</script>
+</body>
+</html>

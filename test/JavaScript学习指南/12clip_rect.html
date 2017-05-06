@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #data1{
+            position: absolute;
+            top:100px;
+            left:100px;
+            width: 200px;
+            height: 200px;
+            background-color: #ff0;
+            clip:rect(0px,200px,200px,0px);
+            /*最终剪裁的矩形的上边距离原始元素的上边缘0像素;
+            剪裁矩形的右边缘距离原元素左边缘的距离是200像素；
+            剪裁矩形的下边缘距离原元素顶部的距离为200像素；
+            剪裁矩形的左边缘距离原元素左边缘的距离时0像素。*/
+        }
+    </style>
+    <script>
+        var bottom=200;
+        var clipped=false;
+
+        document.onclick=testItem;
+        function testItem() {
+            if (clipped){
+                unClipItem();
+            }else {
+                clipItem();
+            }
+        }
+        function clipItem() {
+            bottom-=20;
+            var clip="rect(0px,200px,"+bottom+"px,0px)";
+            var obj=document.getElementById("data1");
+            obj.style.clip=clip;
+            if (bottom==40){
+                clipped=true;
+            }else {
+                setTimeout("clipItem()",100);
+            }
+        }
+        function unClipItem() {
+            bottom+=20;
+            var clip="rect(0px,200px,"+bottom+"px,0px)";
+            var obj=document.getElementById("data1");
+            obj.style.clip=clip;
+            if(bottom==200){
+                clipped=false;
+            }else {
+                setTimeout("unClipItem()",100);
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="data1">
+    this is the text contained within the div block
+</div>
+
+</body>
+</html>

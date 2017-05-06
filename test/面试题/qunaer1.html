@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var head=[12,15,12,12,16];
+    var num1=[1,0,1,1,1];
+    var num2=[0,0,1,0,0];
+    var sum=0;
+    function title(i){
+        var b=head;
+        var a=head.splice(0,i);
+        if(b.indexOf(head[i])!=-1){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    for(var i=0;i<5;i++){
+        if(num1[i]===1&&num2[i]===1){
+            sum+=30;
+        }else if(num1[i]===1&&num2[i]===0&&title(i)){
+            sum+=5;
+        }else if(num1[i]===1&&num2[i]===0&&!title(i)){
+            sum+=10;
+        }else ;
+    }
+
+    console.log(sum);
+</script>
+</body>
+</html>

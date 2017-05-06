@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var n=10;
+    var array=[10,10,10,20,20,20,30,30,30,40];
+    var arrc=[];
+    function FindLastThree(arr){
+        var k=0;
+        for(var i=0;i<arr.length;i++){
+            if(arrc.indexOf(arr[i])==-1){
+                arrc[k]=arr[i];
+                k++;
+            }
+        }
+        if(k<3){
+            console.log("-1");
+        }else {
+            console.log(arrc[2]);
+        }
+    }
+
+
+
+    FindLastThree(array);
+
+</script>
+</body>
+</html>

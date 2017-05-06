@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var line=5;
+    var line0="4 4 5 2 4";
+    var line1="3 3 3 1 3";
+    var line2="5 4 4 3 5";
+    var line3="5 5 5 5 5";
+    var line4="5 2 4 3 4";
+    var lineMinArr=[];
+
+    var lineArr=[line0,line1,line2,line3,line4];
+//    console.log(lineArr);
+
+//    求出每一行的最小值放在数组lineMinArr中
+    for (var i=0;i<lineArr.length;i++){
+        lineArr[i]=lineArr[i].split(' ');
+        lineMinArr[i]=lineArr[i][0];
+        for (var j=0;j<lineArr[i].length;j++){
+            if(lineMinArr[i]>lineArr[i][j]){
+                lineMinArr[i]=lineArr[i][j];
+            }
+        }
+    }
+    console.log(lineMinArr);
+
+//    输出lineMinArr中的最小值
+    function MinPrint(arr) {
+        var Min=lineMinArr[0];
+//        var lineMinArr1=lineMinArr;
+        var sum=0;
+//    console.log(lineMinArr1);
+        for (var i=0;i<lineMinArr.length;i++){
+            var Min_index=i;
+            if(Min>lineMinArr[i]){
+                Min=lineMinArr[i];
+//                lineMinArr[i]=10;
+
+            }
+
+
+        }
+        console.log(Min);
+
+
+//        for (var i=0;i<lineMinArr.length;i++){
+//            if(Min!=lineMinArr[i]){
+//                console.log(Min);
+//            }else {
+//
+//            }
+//        }
+
+    }
+    MinPrint(lineMinArr);
+//    MinPrint(lineMinArr);
+//    MinPrint(lineMinArr);
+//    MinPrint(lineMinArr);
+//    MinPrint(lineMinArr);
+
+
+
+
+
+</script>
+</body>
+</html>

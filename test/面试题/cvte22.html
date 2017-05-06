@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function paramsUrl(url, params) {
+//        split() 方法用于把一个字符串分割成字符串数组。
+        var arrs=url.split("/");
+        var count=0;
+        for(var i=0;i<arrs.length;i++){
+            if(arrs[i].indexOf(":")!==-1){
+                arrs[i]=arrs[i].split(":")[1];
+            }
+        }
+        for(var j=0;j<arrs.length;j++){
+            if(params[arrs[j]]){
+                arrs[j]=params[arrs[j]];
+            }
+        }
+        console.log(params[cid]);
+        return arrs.join("/");
+
+    }
+    var url='classname/:cid/uid/:userid';
+    var params={cid:'5454',userid:'e25'};
+    console.log(paramsUrl(url,params));
+</script>
+</body>
+</html>

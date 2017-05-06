@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    闭包的解决方案
+    function ddd() {
+        for(var i=0;i<5;i++){
+//            方案一：
+//            setTimeout,setInterval都可以
+//            setTimeout((function () {
+//                alert(i);
+//            })(i),1000);
+
+//            方案二：
+//            (function (e) {
+//                setTimeout(function () {
+////                    果然console.log和alert是不一样的
+////                    console.log(e);
+//                    alert(e);
+//                },1000);
+//            })(i);
+
+//            方案三：
+            setTimeout((function (e) {
+                return function () {
+                    console.log(e);
+                }
+            })(i),1000)
+        }
+    }
+    ddd();
+</script>
+</body>
+</html>

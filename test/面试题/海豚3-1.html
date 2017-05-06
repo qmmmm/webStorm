@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var name = "The Window";
+    var object = {
+        <!--这个是对象的属性name，当然可以用this.name的方法调用这个属性。-->
+//    跟3中的函数中的变量不一个概念
+        name : "My Object",
+        getNameFunc : function(){
+//            console.log(this.name);
+            var that = this;
+            return function(){
+                return that.name;
+            };
+        }
+    };
+
+    alert(object.getNameFunc()());
+</script>
+</body>
+</html>

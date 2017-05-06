@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr=[];
+    arr['a']=2;//设置数组对象的a属性，且属性a的值为1；所以数组的长度还是0；
+    console.log(arr.length);//0
+
+//    arr[a]=1;
+//    console.log(arr.length);//error:a is not defined
+
+    arr[2]=2;
+    console.log(arr.length);//3
+
+    arr.length=0;
+    console.log(arr);
+    //[a:1]，第二行设置了a的属性，和该属性值为1，所以就在这儿输出了，
+    // 虽然arr.length=0,只是设置了，数组arr里面的内容没有，但是该数组的属性还存在啊
+
+
+
+//    js数组不能有字符串索引。一个js数组只能有数字索引，当你设置一个字符串索引的时候
+//    你就是设置了这个对象的属性,相当于下面这样
+//    array.a='foo';
+//    array['a']='foo';
+</script>
+</body>
+</html>

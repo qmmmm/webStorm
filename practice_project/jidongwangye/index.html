@@ -15,12 +15,12 @@
             login.onclick=function () {
                 mask.style.display="block";
                 box.style.display="block";
-            }
+            };
             var close_all=document.getElementById("close_all");
             close_all.onclick=function () {
                 mask.style.display="none";
                 box.style.display="none";
-            }
+            };
 
             var search_box=document.getElementById("search_box");
             search_box.onfocus=function () {
@@ -28,7 +28,7 @@
                     search_box.value="";
                     search_box.style.color="#333";
                 }
-            }
+            };
             search_box.onblur=function () {
                 if(search_box.value==""){
                     search_box.value="图书开抢";
@@ -37,8 +37,6 @@
             }
         }
     </script>
-
-
 </head>
 <body>
 <div id="mask"></div>
@@ -270,14 +268,14 @@
         var pic=document.getElementById("pic");
         slide.onmouseover=function () {
             arr.style.display="block";
-        }
+        };
         slide.onmouseout=function () {
             arr.style.display="none";
-        }
+        };
         li02.onmouseover=function () {
             pic.src="images/11.jpg";
             li02.className="current";
-        }
+        };
         li01.onmouseover=function () {
             pic.src="images/slider1.jpg";
             li01.className="current";

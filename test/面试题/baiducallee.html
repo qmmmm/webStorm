@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function aa(a,b,c) {
+        console.log(arguments.callee.length);//形参的个数
+        console.log(arguments.length);//实参的个数
+    }
+    aa(2,3);
+</script>
+</body>
+</html>

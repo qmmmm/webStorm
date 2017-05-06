@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+//    类似快排
+    var arr=[1,2,3,4,5,9];
+    function add(a) {
+        var ab=[];
+        for(var i=0,j=a.length-1;i<j;){
+            if(a[i]+a[j]==12){
+                ab[0]=a[i];
+                ab[1]=a[j];
+                return ab;
+            }else if (a[i]+a[j]<12){
+                i++;
+            }else if (a[i]+a[j]>12){
+                j--;
+            }else {
+                return false;
+            }
+        }
+    }
+    console.log(add(arr));
+</script>
+</body>
+</html>

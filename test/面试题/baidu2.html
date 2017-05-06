@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var n = 4;
+    var array = [19, 7, 8, 25];
+    var count = 0;
+
+    for (var i=array.length-1;i>=0;i--){
+        if (check(array) == true) {
+            document.write(count);
+        } else {
+            array=findmax(array);
+            count++;
+            array.pop();
+            check(array);
+            ...
+
+
+
+        }
+    }
+
+
+
+    function findmax(arr) {
+
+        var item = arr[arr.length-1];
+        var max = arr[0];
+        for (var i = 1; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+        }
+        var index1=arr.indexOf(max);
+        arr[index1] = item;
+        arr[arr.length-1]=max;
+        return arr;
+    }
+
+    function check(arr) {
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] <= arr[i + 1]) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
