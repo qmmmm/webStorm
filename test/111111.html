@@ -3,24 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <style>
-        #parent {
-            height: 250px;
-            background-color: red;
+    <script>
+        function simpleClone(initalObj) {
+            var obj = {};
+            for ( var i in initalObj) {
+                obj[i] = initalObj[i];
+            }
+            return obj;
         }
-        #floater {
-            float: left;
-            height: 50%;
-            width: 100%;
-            margin-bottom: -50px;
-            background-color: yellow;
-        }
-        #child {
-            clear: both;
-            height: 100px;
-            background-color: blue;
-        }
-    </style>
+
+        var obj = {
+            a: "hello",
+            b:{
+                a: "world",
+                b: 21
+            },
+            c:["Bob", "Tom", "Jenny"],
+            d:function() {
+                alert("hello world");
+            }
+        };
+        var cloneObj = simpleClone(obj);
+        console.log(cloneObj.a);//"hello"
+        console.log(cloneObj.b);//{a:"world",b:21}
+        console.log(cloneObj.c);//["Bob","Tom","Jenny"]
+        console.log(cloneObj.d);//function (){alert("hello world");}
+
+        cloneObj.a="world";//深拷贝，不会变
+        cloneObj.b.a = "changed";//浅拷贝改变了
+        cloneObj.c = [1, 2, 3];//这个为什么不变
+        cloneObj.d = function() { alert("changed"); };//这个为什么不变
+        console.log(obj.a);//"hello"
+        console.log(obj.b);//{a:"changed",b:21}
+        console.log(obj.c);//[1,2,3]
+        console.log(obj.d);//function (){alert("changed")}
+
+    </script>
 </head>
 <body>
 <div id="parent">

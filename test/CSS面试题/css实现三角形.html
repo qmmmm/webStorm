@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #triangle-up{
+            width:0;
+            height:0;
+            border-top: 100px solid yellow;
+            border-left: 100px solid blue;
+            border-right: 100px solid green;
+            border-bottom: 100px solid red;
+        }
+        #triangleWithBorder{
+            width:0;
+            height:0;
+            border-width:0 30px 30px 30px;
+            border-style:solid;
+            border-color:transparent transparent #333;/*透明 透明  灰*/
+            margin:40px auto;
+            position:relative;
+        }
+        #triangleWithBorder span{
+            display:block;
+            width:0;
+            height:0;
+            border-width:0 20px 20px;
+            border-style:solid;
+            border-color:transparent transparent #fc0;/*透明 透明  黄*/
+            position:absolute;
+            top:5px;
+            left:-20px;
+
+        }
+        #triangleEach{
+            width:0;
+            height:0;
+            border-width:30px 30px 0 0;
+            border-style:solid;
+            border-color:#6c6 transparent transparent transparent;
+            margin:40px auto;
+            position:relative;
+        }
+    </style>
+</head>
+<body>
+<div id="triangle-up">
+    利用border属性
+</div>
+
+<div id="triangleWithBorder">
+    <span>
+            叠加层，带边框的三角形
+    </span>
+</div>
+<div id="triangleEach">
+
+</div>
+</body>
+</html>
