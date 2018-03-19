@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #parent {
+            height: 250px;
+            background-color: red
+        }
+        #floater {
+            float: left;
+            height: 50%;
+            width: 100%;
+            background-color: #0C4E7C;
+            margin-bottom: -50px;
+        }
+        #child {
+            background-color: yellow;
+            clear: both;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <!--通过浮动一个盒子-->
+    <div id="floater"></div>
+    <div id="child">通过浮动上面的盒子，
+        然后在设置margin-bottom为负，上移浮动的盒子，
+        要记得下面的盒子要清除浮动啊</div>
+</div>
+</body>
+</html>

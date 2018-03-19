@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function SuperType() {
+            this.property=true;
+        }
+        function SubType() {
+            this.subproperty=false;
+        }
+        SuperType.prototype.getSuperValue=function () {
+            return this.property;
+        };
+        SubType.prototype=new SuperType();
+        SubType.prototype.getSubValue=function () {
+            return this.subproperty;
+        };
+        var super1=new SuperType();
+        var instance=new SubType();
+        alert(instance.getSuperValue());
+        console.log('instance.constructor');
+        console.log(instance.constructor);
+        console.log(super1.constructor);
+    </script>
+</head>
+<body>
+<div>
+    通过创建SuperType的实例 ，并将该实例赋给SubType.prototype实现,
+    实现的本质是重写原型对象。
+    继承之后，子类的constructor跟父类的constructor是同样的。
+</div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function createAnother(original) {
+            var clone=original;
+            clone.sayhi=function () {
+                alert('hi');
+            };
+            return clone;
+        }
+        var person={
+            name:'qm',
+            friends:['kk','mm']
+        };
+        var another=createAnother(person);
+        another.sayhi();
+    </script>
+</head>
+<body>
+<div>
+    创建一个仅用于封装继承过程的函数，该函数在内部以某种方式来增强对象，
+    最后再像真的是他做了所有工作一样，返回该对象。
+
+    缺点和构造函数一样，代码复用率低
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>判断对象是否是某一类型</title>
+    <script>
+        function arg(a,b,c,d) {
+            var a=arguments.length;//实参的长度
+            console.log(a);
+            console.log(arguments);
+
+            arguments[0]=3;
+            console.log(arguments);//在函数里面直接修改arguments对象的值，会对传进来的值有影响
+            console.log(arguments.callee.length);//获取函数形参的长度
+
+        }
+        arg(1,2,3);
+        console.log(arg.length);//获取函数形参的长度
+    </script>
+</head>
+
+<body>
+<div class="div1">
+    <div class="div2">
+        hehehehehehehehehehehehehehehehehehehehehe
+
+    </div>
+</div>
+
+</body>
+</html>

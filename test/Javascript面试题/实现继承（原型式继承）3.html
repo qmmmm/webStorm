@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var person={
+            name:'qmm',
+            friends:['hhh','kkk']
+        };
+        var anotherperson=Object.create(person,{name:{value:'qq'}});
+        anotherperson.friends.push('mmm');
+
+        var yetanother=Object.create(person,{name:{value:'mm'}});
+        yetanother.friends.push('ooo');
+
+        console.log(person.name);
+        console.log(anotherperson.name);
+        console.log(yetanother.name);
+        console.log(yetanother.friends);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

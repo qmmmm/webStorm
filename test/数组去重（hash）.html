@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    Array.prototype.unique=function () {
+        var hash={};
+        var n=[];
+        for(var i=0;i<this.length;i++){
+            if(!hash[this[i]]){
+                hash[this[i]]=true;
+                n.push(this[i]);
+
+            }
+        }
+        return n;
+    };
+    var a=[11,2,22,11,22,3];
+    console.log(a.unique());
+
+
+</script>
+</body>
+</html>

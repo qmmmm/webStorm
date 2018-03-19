@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Person(name, age, job) {
+            var o=new Object();
+            o.sayName=function () {
+                return name;
+            };
+            return o;
+        }
+        var person1=Person('qmm',18,'coding');
+        console.log(person1.sayName());
+    </script>
+</head>
+<body>
+
+这种方法创建的对象和构造函数也没有关系，不能用instanceof判断对象类型。
+
+</body>
+</html>

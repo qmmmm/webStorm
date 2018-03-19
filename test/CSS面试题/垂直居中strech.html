@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #parent {
+            background-color: red;
+            position: relative;
+            height: 400px;
+        }
+        #child {
+            background-color: yellow;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 50%; /*父元素的50%*/
+            height: 30%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <div id="child">子绝父相，子元素的top，bottom，left，right都是0，再使用margin:auto;来把子元素拉伸成距离对边一样远的居中元素</div>
+</div>
+</body>
+</html>

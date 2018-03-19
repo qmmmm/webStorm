@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #span1{
+            background-color: red;
+            /*display: inline-block;*/
+
+        }
+        #span2{
+            float: left;
+            /*display: inline-block;*/
+            background-color: yellow;
+        }
+        #span3{
+            /*display: inline-block;*/
+            position: absolute;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<div>
+    如果设置span display：inline－block的话，span就会独占一行，如果不设置inline－block的话，不会独占一行
+    如果两个span，第一个不设置，第二个设置了float：left那么第二个会跑到第一个的前面，因为span是inline－block元素，就会像文本一样围绕着float元素显示嘛
+    inline－block就算不浮动，也可以设置宽高，inline元素只有浮动才能设置宽高，不浮动不可以
+    <span id="span1">第一个红色的如果占满一行，后面的float就不会跑到这个前面了，已经占满一行了，浮动就在下一行里左右浮动了</span>
+    <span id="span2">在该行会跑到前面，把其他的span挤到后面（只是挤到该行的后面）</span>
+    <span id="span3">绝对定位了但是其他什么都没有设置还是会在原位置</span>
+</div>
+</body>
+</html>

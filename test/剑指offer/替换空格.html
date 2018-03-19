@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    str='abc def ggggggg';
+    var num=0;
+    function replace(str) {
+        for(var i=str.length-1;i>=0;i--){
+            if(str.charAt(i)==' '){
+                num++;
+            }
+        }
+        var p1=str.length;
+        var p2=str.length+num*3;
+        var str1;
+        while(p1!=p2){
+            if(p1==' '){
+                p1--;
+                str1[p2]='o';
+                str1[p2-1]='o';
+                str1[p2-2]='o';
+                p2=p2-3;
+            }
+            str1[p2]=str[p1];
+        }
+        return str1;
+    }
+    console.log(replace(str));
+</script>
+</body>
+</html>

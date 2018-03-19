@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        有一个数组 int[] a, 里面有数值>0, =0, <0的, 现在设计算法
+// 计算出相邻累加和最大的一个子序列(子序列也可以用数组开始的index和结束的index两个值表示),
+// 语言不限
+
+//        function maxse(a){
+//            var max=a[0];
+//            var indexs=[0,0];
+//            for(var i=0;i<a.length;i++){
+//                var tmp=0;
+//                for(var j=i;j<a.length;j++){
+//                    tmp+=a[j];
+//                    if(max<tmp){
+//                        max=tmp;
+//                        indexs[0]=i;
+//                        indexs[1]=j;
+//                    }
+//                }
+//            }
+//            return indexs;
+//        }
+function maxse(a) {
+    maxsum=maxhere=a[0];
+    for(var i=0;i<a.length;i++){
+        if(maxsum<=0){
+            return i;
+        }else {
+            maxhere+=a[i];
+        }
+    }
+}
+        console.log(maxse([1,2,3]));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

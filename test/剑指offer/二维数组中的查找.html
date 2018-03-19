@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--查找一个数是否存在于二维数组中，（数组 从左到右递增，从上到下递增）-->
+<div>
+    测试用例：
+    1、临界值
+    2、不存在的值
+    3、特殊值，空指针等
+</div>
+<script>
+    var key=10;
+    function Find(key) {
+        var martix=[[1,2,8,9],
+            [2,4,9,12],
+            [4,7,10,13],
+            [6,8,11,15]];
+        var i=0;
+        var j=martix[0].length-1;
+        while(i<martix.length && j>=0){
+            var check=martix[i][j];
+//            注意check不能写到循环的外面，martix[i][j],而不要写成martix[0][j]
+//            自己写的时候犯了这两个错误
+            if(key==check){
+                return true;
+            }else if(key<check){
+                j--;
+            }else {
+                i++;
+            }
+        }
+        return false;
+    }
+    console.log(Find(key));
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function quicksort(arr, left, right) {
+            if(left<right){
+                var i=left;
+                var j=right;
+                var tmp=arr[left];
+                while(i<j){
+                    while(i<j && arr[j]>tmp){j--}
+                    if(i<j){
+                        arr[i]=arr[j];
+                        i++;
+                    }
+                    while(i<j && arr[i]<tmp){i++}
+                    if(i<j){
+                        arr[j]=arr[i];
+                        j--;
+                    }
+                }
+                a[i]=tmp;
+                quicksort(arr,left,i-1);
+                quicksort(arr,i+1,right);
+            }
+
+        }
+        var a=[8,3,5,9,0,4,5,6,2,1,4];
+        quicksort(a,0,a.length-1);
+        for(var i=0;i<a.length;i++){
+            console.log(a[i]);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

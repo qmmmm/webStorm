@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #parent{
+            background-color: red;
+        }
+        #child{
+            background-color: yellow;
+            width:300px;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <div id="child">
+        margin:0 auto;实现 宽度一定的块状元素 水平居中效果
+        为什么 margin: auto; 无法再纵向上垂直居中？其实原因也是上面所说的，因为纵向是可以无限延展的，所以没有一个一定的值可以被参照被用来计算。
+
+    </div>
+</div>
+</body>
+</html>

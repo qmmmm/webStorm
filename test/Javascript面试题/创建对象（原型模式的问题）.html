@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Person() {
+        }
+        Person.prototype={
+            name:'qmm',
+            age:32,
+            job:'coding',
+            friends:['kk','ll'],
+            sayName:function () {
+                return this.name;
+            }
+        };
+        Object.defineProperty(Person.prototype,'constructor',{
+            enumerable:false,
+            value:Person
+        });
+        var person1=new Person();
+        var person2=new Person();
+        person1.friends.push('mmqi');
+        console.log(person2.friends);
+    </script>
+</head>
+<body>
+
+原型对象的问题：对于包含引用值类型的属性，在一个实例中做出的修改，也会在另外一个实例中反映出来
+
+</body>
+</html>

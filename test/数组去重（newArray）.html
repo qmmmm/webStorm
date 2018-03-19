@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    Array.prototype.unique=function () {
+        var arr=[];
+        for(var i=0;i<this.length;i++){
+            if(arr.indexOf(this[i])==-1){
+                arr.push(this[i]);
+            }
+        }
+        return arr;
+    };
+    var a=[11,2,22,11,22,3];
+    console.log(a.unique());
+</script>
+</body>
+</html>

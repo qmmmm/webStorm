@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function bubbleSort(numSeries) {
+        if (numSeries.length < 2) {
+            return numSeries;
+        }
+        var len = numSeries.length;
+
+        for (var i = 0; i < len - 1; i++) {
+            for (var j = 0; j < len  -i- 1; j++) {
+                if (numSeries[j] > numSeries[j + 1]) {
+                    [
+                        numSeries[j],
+                        numSeries[j + 1]
+                    ] = [
+                        numSeries[j + 1],
+                        numSeries[j]
+                    ];
+                }
+            }
+        }
+
+        return numSeries;
+    }
+    console.log(bubbleSort([3,4,1,2,5]));
+
+</script>
+</body>
+</html>

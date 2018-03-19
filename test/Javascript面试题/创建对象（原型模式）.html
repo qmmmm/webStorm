@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Person() {
+
+        }
+//        如下解决了需要敲很多遍Person.prototype为它设置属性的问题
+        Person.prototype={
+//            这样的话，它的constructor就不是Person了，需要手动设置,但是这样设置的constructor变成可枚举的了，用defineProperty解决
+//            constructor:Person,
+            name:'qmm',
+            age:32,
+            job:'coding',
+            sayName:function () {
+                return this.name;
+            }
+        };
+        Object.defineProperty(Person.prototype,'constructor',{
+            enumerable:false,
+            value:Person
+        });
+        var person1=new Person();
+//        来自原型
+        console.log(person1.name);
+
+        var person2=new Person();
+        console.log(person2.name);
+
+        alert(person1.name==person2.name);
+
+        person2.name='greg';
+//        来自实例
+        console.log(person2.name);
+
+        alert(person1.name==person2.name);
+    </script>
+</head>
+<body>
+
+原型对象的好处：可以让所有对象实例共享它所包含的属性和方法。
+实例不能修改原型对象中的值，只能屏蔽原型对象中的同名属性。（高程p149）
+
+</body>
+</html>

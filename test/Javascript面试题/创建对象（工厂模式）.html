@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function createPerson(name, age, job) {
+//            在里面new 了对象
+            var o =new Object();
+            o.name=name;
+            o.age=age;
+            o.job=job;
+            o.sayName=function () {
+                return this.name;
+            };
+//            最后要return
+            return o;
+        }
+        //注意：不用new，直接调用函数就可以
+        var person1=createPerson('qmm',44,'chengxu');
+        var person2=createPerson('mmqi',88,'hehe');
+        console.log(person1);
+        console.log(person2);
+
+    </script>
+</head>
+<body>
+虽然解决了创建多个相似对象的问题，但没有解决对象识别的问题（即怎样知道一个对象的类型）。
+比如说，这里的两个person是object，构造函数那边的两个person是Person类型的。（通过运行的结果可以看出来）
+</body>
+</html>

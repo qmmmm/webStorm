@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function SuperType() {
+            this.colors=['red','yellow'];
+        }
+        function SubType() {
+            SuperType.call(this);
+        }
+        var instance1=new SubType();
+        instance1.colors.push('blue');
+        alert(instance1.colors);
+        var instance2=new SubType();
+        alert(instance2.colors);
+    </script>
+</head>
+<body>
+<div>
+    解决了原型连继承中的，包含引用类型值的原型属性，会被所有的实例共享的问题。
+</div>
+</body>
+</html>

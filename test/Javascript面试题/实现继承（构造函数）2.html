@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function SuperType(name) {
+            this.name=name;
+        }
+        function SubType() {
+            SuperType.call(this,'qmm');
+            this.age=35;
+        }
+        var instance1=new SubType();
+        alert(instance1.name);
+        alert(instance1.age);
+        console.log(instance1.constructor);
+        console.log(instance1.__proto__);
+        console.log(SubType.prototype);
+    </script>
+</head>
+<body>
+<div>
+    解决了原型继承中  不能向超类型的构造函数中传递参数的问题.
+    但是 构造函数模式存在的问题：
+    1、方法都在构造函数中定义，因此 函数复用也就无从谈起
+    2、在超类型中定义的方法，在子类型中是不可见的，因此，所有类型都只能使用构造函数模式
+    因为存在这些问题，原型链继承和构造函数继承都很少单独使用
+</div>
+</body>
+</html>

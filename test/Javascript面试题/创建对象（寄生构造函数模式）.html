@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Person(name, age, job) {
+            var o=new Object();
+            o.name=name;
+            o.age=age;
+            o.job=job;
+            o.sayName=function () {
+                return this.name;
+            };
+            return o;
+        }
+        var person1=new Person('qmm',21,'coding');
+        console.log(person1.sayName());
+    </script>
+</head>
+<body>
+跟工厂模式就多了一个new
+
+构造函数里面return的对象，与构造函数或者 构造函数的原型属性之间没有关系。
+与在构造函数外部创建的对象没有什么不同，
+不能依赖instanceof 来确定对象类型。
+</body>
+</html>

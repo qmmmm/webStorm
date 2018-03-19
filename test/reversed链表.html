@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function ListNode(x) {
+        this.val=x;
+        this.next=null;
+    }
+    function reversedList(pHead) {
+        var pnode=pHead;
+        var pre=null;
+        var reHead=null;
+        while(pnode!=null){
+            var pnext=pnode.next;
+            if(pnext==null){
+                reHead=pnode;
+            }
+            pnode.next=pre;
+            pre=pnode;
+            pnode=pnext;
+        }
+        console.log(reHead);
+    }
+    var lsnode1=new ListNode(1);
+    var pHead=lsnode1;
+
+    var lsnode2=new ListNode(2);
+    var lsnode3=new ListNode(3);
+    var lsnode4=new ListNode(4);
+    lsnode1.next=lsnode2;
+    lsnode2.next=lsnode3;
+    lsnode3.next=lsnode4;
+    reversedList(pHead);
+
+</script>
+</body>
+</html>

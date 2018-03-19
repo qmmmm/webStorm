@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #parent {
+            background-color: red;
+            position: relative;
+            height: 200px;
+            width:500px;
+        }
+        #child {
+            background-color: yellow;
+            position: absolute;
+            top: 50%;/*父元素的50%*/
+            left: 50%;
+            height: 30%;/*父元素的30%，60px*/
+            width: 50%;
+            margin: -30px 0 0 -25%; /*margin都是相对父元素宽度的百分比！500px*5%，500px*25%的百分比*/
+            /*规范中注明 margin 的百分比值参照其包含块的宽度进行计算。*/
+            /*当书写模式变成纵向的时候，其参照将会变成包含块的高度。*/
+        }
+    </style>
+</head>
+<body>
+<div id="parent">
+    <div id="child">
+        上下居中不能用margin:auto;
+        子绝父相，top，left都为50%，设置负margin
+        注意：margin百分比是按照父元素的宽度计算
+    </div>
+</div>
+</body>
+</html>

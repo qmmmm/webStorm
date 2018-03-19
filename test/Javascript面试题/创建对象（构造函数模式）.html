@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+//        构造函数模式第一种：问题：每个方法都要在每个实例上创建一遍，为了解决这个问题，用构造函数第二种
+//        function Person(name, age, job) {
+//            this.name=name;
+//            this.age=age;
+//            this.job=job;
+//            this.sayName=function () {
+//                return this.name;
+//            }
+//        }
+
+
+//        构造函数第二种，把对象的方法写在构造函数外面。存在的问题：写下面
+        function Person(name, age, job) {
+            this.name=name;
+            this.age=age;
+            this.job=job;
+            this.sayName=sayName;
+        }
+        function sayName() {
+            return this.name;
+        }
+
+//        当作构造函数使用
+        var person1=new Person('qmm',88,'kk');
+        var person2=new Person('hhh',00,'ll');
+        console.log(person1);
+        console.log(person2);
+        console.log(person1.sayName());
+
+//        作为普通函数调用
+        Person('windo',9,'window');
+        console.log(window.name);
+        console.log(window.sayName());
+
+//        在另一个对象的作用域中调用
+        var o=new Object();
+        Person.call(o,'haha',00,'doc');
+        console.log(o);
+        console.log(o.name);
+    </script>
+</head>
+<body>
+构造函数可用来创建特定类型的对象。
+创建自定义的构造函数意味着将来可以将它的实例标识为一种特定的类型。（这是构造函数胜过工厂模式的地方）。
+构造函数与其它函数唯一的区别，就在于调用他们的方式不同。
+
+
+构造函数第二种的问题：
+sayName方法放在全局作用域中，实际上只能被某个对象调用，让全局作用域名不副实。
+如果对象需要定义很多方法，那就要定义很多全局函数，这就让自定义的引用类型没有封装行可言。
+so，原型模式来解决这个问题了。
+</body>
+</html>

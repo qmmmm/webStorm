@@ -32,9 +32,10 @@
 //    }
 
 //解决方案3
-//    for(var i=0;i<10;i++){
-//        setTimeout(console.log.bind(console,i),1000);
-//    }
+//     for(var i=0;i<10;i++){
+//         var a = console.log;
+//         setTimeout(a.bind(console, i),1000);
+//     }
 
 //解决方案4相当于解决方案2！
     function aa(e) {
